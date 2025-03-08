@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Importar EmailJS para manejar el envío de correos -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <header>
@@ -44,8 +46,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Aquí puedes agregar tu foto o una imagen representativa -->
-                <div class="placeholder-image"></div>
+                
+                <div class="placeholder-image"><img src="assets/Perfil.jpg" alt=""></div>
             </div>
         </section>
 
@@ -64,8 +66,8 @@
                         </div>
                         <div class="detail">
                             <i class="fas fa-database"></i>
-                            <h3>Soporte Backend</h3>
-                            <p>Colaboración en desarrollo de lógica de servidor</p>
+                            <h3>Auxiliar Backend</h3>
+                            <p>Colaboración en desarrollo de codigo de funcionalidad</p>
                         </div>
                         <div class="detail">
                             <i class="fas fa-users"></i>
@@ -84,7 +86,7 @@
                 <!-- Proyecto 1 - ISSS Salud -->
                 <div class="project-card">
                     <div class="project-img">
-                        <div class="placeholder-project"></div>
+                        <div class="placeholder-project"><img src="assets/LOGO AZUL.png" alt=""></div>
                     </div>
                     <div class="project-info">
                         <h3>ISSS Salud</h3>
@@ -105,7 +107,7 @@
                 <!-- Proyecto 2 - WorkFinder -->
                 <div class="project-card">
                     <div class="project-img">
-                        <div class="placeholder-project"></div>
+                        <div class="placeholder-project"><img src="assets/Work Finder-1 02 Artboard 4.png" alt=""></div>
                     </div>
                     <div class="project-info">
                         <h3>WorkFinder</h3>
@@ -124,7 +126,7 @@
                 <!-- Proyecto 3 - Hospital Bloom -->
                 <div class="project-card">
                     <div class="project-img">
-                        <div class="placeholder-project"></div>
+                        <div class="placeholder-project"><img src="assets/bloom salud.png" alt=""></div>
                     </div>
                     <div class="project-info">
                         <h3>Hospital Bloom</h3>
@@ -286,16 +288,17 @@
                     <form id="contactForm">
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="from_name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="reply_to" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Mensaje</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
+                        <div id="form-status"></div>
                         <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
                     </form>
                 </div>

@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hospital Bloom - Proyecto</title>
+    <title>Hospital Bloom - Detalles del Proyecto</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/project-detailss.css">
+    <link rel="stylesheet" href="../css/project-details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,138 +34,169 @@
     </header>
 
     <main>
-        <section class="project-detail-section">
-            <div class="project-detail-container">
-                <div class="project-header">
-                    <a href="../index.html#projects" class="back-button"><i class="fas fa-arrow-left"></i> Volver a Proyectos</a>
-                    <h1>Hospital Bloom</h1>
-                    <div class="project-tags">
-                        <span>Frontend</span>
-                        <span>Backend</span>
-                        <span>UI Design</span>
+        <section class="project-details-header">
+            <div class="project-title-container">
+                <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Volver a Proyectos</a>
+                <h1>Hospital Bloom</h1>
+                <div class="project-tags">
+                    <span>Frontend</span>
+                    <span>Backend</span>
+                    <span>UI Design</span>
+                    <span>Java</span>
+                </div>
+                <div class="project-links-header">
+                    <a href="https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git" target="_blank" class="github-link">
+                        <i class="fab fa-github"></i> Ver Repositorio
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="project-content">
+            <div class="project-description">
+                <h2>Descripción del Proyecto</h2>
+                <p>Sistema de gestión hospitalaria especializado en pediatría, desarrollado para el Hospital Bloom. El proyecto se enfoca en optimizar procesos internos del hospital, mejorando la eficiencia en la atención médica y seguimiento de pacientes.</p>
+                <p>En este proyecto, fui responsable del diseño e implementación de las interfaces de usuario, además de colaborar en el desarrollo de la lógica de negocio en el backend.</p>
+            </div>
+
+            <div class="project-gallery">
+                <h2>Capturas del Proyecto</h2>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-text">Vista Principal</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-text">Gestión de Pacientes</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-text">Estadísticas Médicas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-features">
+                <h2>Características Principales</h2>
+                <ul>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Gestión de Pacientes</h3>
+                            <p>Registro completo de pacientes pediátricos con historial médico, tratamientos y citas programadas.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Sistema de Citas</h3>
+                            <p>Programación y seguimiento de citas médicas con notificaciones automáticas para el personal y pacientes.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Estadísticas Médicas</h3>
+                            <p>Visualización de datos estadísticos sobre pacientes, tratamientos y resultados médicos para análisis.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Control de Medicamentos</h3>
+                            <p>Gestión del inventario de medicamentos y seguimiento de tratamientos asignados a pacientes.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="project-tech-stack">
+                <h2>Tecnologías Utilizadas</h2>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fab fa-java"></i>
                         <span>Java</span>
                     </div>
+                    <div class="tech-item">
+                        <i class="fas fa-database"></i>
+                        <span>MySQL</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-html5"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-css3-alt"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fab fa-js"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-window-restore"></i>
+                        <span>Swing/JavaFX</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="project-image-container">
-                    <div class="project-detail-image"></div>
+            <div class="project-challenges">
+                <h2>Desafíos y Soluciones</h2>
+                <div class="challenge-item">
+                    <h3>Interfaz Intuitiva para Personal Médico</h3>
+                    <p>El personal médico necesitaba una interfaz que permitiera acceder rápidamente a información crítica de pacientes, sin requerir capacitación técnica extensa.</p>
+                    <p><strong>Solución:</strong> Diseñé una interfaz basada en investigación de experiencia de usuario, con flujos de trabajo optimizados para las tareas más frecuentes y un sistema de navegación simplificado.</p>
                 </div>
+                <div class="challenge-item">
+                    <h3>Visualización de Datos Médicos Complejos</h3>
+                    <p>Los historiales médicos pediátricos contienen información compleja que debía ser accesible y clara para tomar decisiones médicas rápidas.</p>
+                    <p><strong>Solución:</strong> Implementé gráficos y visualizaciones personalizadas que permitían ver de un vistazo la evolución del paciente, con opciones para profundizar en detalles específicos cuando fuera necesario.</p>
+                </div>
+            </div>
 
-                <div class="project-info-container">
-                    <div class="project-description">
-                        <h2>Descripción del Proyecto</h2>
-                        <p>Sistema de gestión hospitalaria especializado en pediatría, desarrollado para el Hospital Bloom. El proyecto se enfoca en optimizar procesos internos del hospital, mejorando la eficiencia en la atención médica y seguimiento de pacientes.</p>
-                        <p>En este proyecto, fui responsable del diseño e implementación de las interfaces de usuario, además de colaborar en el desarrollo de la lógica de negocio en el backend.</p>
-                    </div>
+            <div class="project-role">
+                <h2>Mi Rol en el Proyecto</h2>
+                <p>Como responsable del frontend y colaborador en el backend, me encargué de:</p>
+                <ul>
+                    <li>Diseño completo de la interfaz de usuario del sistema</li>
+                    <li>Implementación frontend de los módulos de gestión de pacientes</li>
+                    <li>Desarrollo de componentes para la visualización de datos médicos</li>
+                    <li>Colaboración en la integración de la base de datos con la interfaz</li>
+                    <li>Optimización de la experiencia de usuario para el personal médico</li>
+                </ul>
+            </div>
 
-                    <div class="project-role">
-                        <h2>Mi Rol</h2>
-                        <ul>
-                            <li><i class="fas fa-check"></i> Diseño completo de la interfaz de usuario del sistema</li>
-                            <li><i class="fas fa-check"></i> Implementación frontend de los módulos de gestión de pacientes</li>
-                            <li><i class="fas fa-check"></i> Desarrollo de componentes para la visualización de datos médicos</li>
-                            <li><i class="fas fa-check"></i> Colaboración en la integración de la base de datos con la interfaz</li>
-                            <li><i class="fas fa-check"></i> Optimización de la experiencia de usuario para el personal médico</li>
-                        </ul>
-                    </div>
+            <div class="project-conclusion">
+                <h2>Aprendizajes y Conclusiones</h2>
+                <p>Este proyecto me permitió profundizar en el desarrollo de sistemas de gestión médica, entendiendo las necesidades específicas del personal hospitalario y los pacientes. Aprendí a diseñar interfaces que equilibran la simplicidad de uso con la complejidad de la información médica que deben manejar.</p>
+                <p>También mejoré mis habilidades técnicas en el desarrollo con Java y la integración con bases de datos, así como en la visualización efectiva de datos complejos.</p>
+            </div>
 
-                    <div class="project-technologies">
-                        <h2>Tecnologías Utilizadas</h2>
-                        <div class="tech-grid">
-                            <div class="tech-item">
-                                <i class="fab fa-java"></i>
-                                <span>Java</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-database"></i>
-                                <span>MySQL</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-html5"></i>
-                                <span>HTML5</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-css3-alt"></i>
-                                <span>CSS3</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fab fa-js"></i>
-                                <span>JavaScript</span>
-                            </div>
-                            <div class="tech-item">
-                                <i class="fas fa-window-restore"></i>
-                                <span>Swing/JavaFX</span>
-                            </div>
+            <div class="next-projects">
+                <h2>Otros Proyectos</h2>
+                <div class="next-projects-grid">
+                    <a href="isss-project.html" class="next-project-card">
+                        <div class="next-project-image">
+                            <div class="placeholder-project"></div>
                         </div>
-                    </div>
-
-                    <div class="project-features">
-                        <h2>Características Principales</h2>
-                        <div class="features-container">
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-user-md"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h3>Gestión de Pacientes</h3>
-                                    <p>Registro completo de pacientes pediátricos con historial médico, tratamientos y citas programadas.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-calendar-check"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h3>Sistema de Citas</h3>
-                                    <p>Programación y seguimiento de citas médicas con notificaciones automáticas para el personal y pacientes.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h3>Estadísticas Médicas</h3>
-                                    <p>Visualización de datos estadísticos sobre pacientes, tratamientos y resultados médicos para análisis.</p>
-                                </div>
-                            </div>
-                            <div class="feature-item">
-                                <div class="feature-icon">
-                                    <i class="fas fa-pills"></i>
-                                </div>
-                                <div class="feature-text">
-                                    <h3>Control de Medicamentos</h3>
-                                    <p>Gestión del inventario de medicamentos y seguimiento de tratamientos asignados a pacientes.</p>
-                                </div>
-                            </div>
+                        <div class="next-project-info">
+                            <h3>ISSS Salud</h3>
+                            <p>Sistema integrado para gestión de salud</p>
                         </div>
-                    </div>
-
-                    <div class="project-challenges">
-                        <h2>Desafíos y Soluciones</h2>
-                        <div class="challenge-item">
-                            <h3>Desafío: Interfaz Intuitiva para Personal Médico</h3>
-                            <p>El personal médico necesitaba una interfaz que permitiera acceder rápidamente a información crítica de pacientes, sin requerir capacitación técnica extensa.</p>
-                            <h4>Solución:</h4>
-                            <p>Diseñé una interfaz basada en investigación de experiencia de usuario, con flujos de trabajo optimizados para las tareas más frecuentes y un sistema de navegación simplificado.</p>
+                    </a>
+                    <a href="workfinder-project.html" class="next-project-card">
+                        <div class="next-project-image">
+                            <div class="placeholder-project"></div>
                         </div>
-                        <div class="challenge-item">
-                            <h3>Desafío: Visualización de Datos Médicos Complejos</h3>
-                            <p>Los historiales médicos pediátricos contienen información compleja que debía ser accesible y clara para tomar decisiones médicas rápidas.</p>
-                            <h4>Solución:</h4>
-                            <p>Implementé gráficos y visualizaciones personalizadas que permitían ver de un vistazo la evolución del paciente, con opciones para profundizar en detalles específicos cuando fuera necesario.</p>
+                        <div class="next-project-info">
+                            <h3>WorkFinder</h3>
+                            <p>Plataforma de búsqueda de empleo</p>
                         </div>
-                    </div>
-
-                    <div class="project-links">
-                        <h2>Enlaces</h2>
-                        <a href="https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git" target="_blank" class="project-link-button">
-                            <i class="fab fa-github"></i> Ver Repositorio
-                        </a>
-                        <a href="#" class="project-link-button disabled">
-                            <i class="fas fa-globe"></i> Demo del Proyecto (No disponible)
-                        </a>
-                    </div>
+                    </a>
                 </div>
             </div>
         </section>
@@ -174,7 +205,7 @@
     <footer>
         <div class="footer-content">
             <div class="footer-text">
-                <p>&copy; 2025 Portafolio Desarrollador. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Portafolio de Ricardo Daniel Garcia Pocasangre. Todos los derechos reservados.</p>
             </div>
             <div class="social-links">
                 <a href="#" target="_blank"><i class="fab fa-github"></i></a>

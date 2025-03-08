@@ -65,6 +65,7 @@
     border-radius: 4px;
     font-weight: 500;
     transition: var(--transition);
+    margin: 0.5rem;
 }
 
 .github-link i {
@@ -123,19 +124,41 @@
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .gallery-placeholder {
-    height: 200px;
+    width: 100%;
     background-color: var(--gray-300);
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 200px;
+    position: relative;
 }
 
 .placeholder-text {
     color: var(--gray-700);
     font-weight: 500;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo para las imágenes dentro de las tarjetas */
+.placeholder-text img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la relación de aspecto */
+    max-height: 300px;
+    display: block;
 }
 
 /* Características del proyecto */
@@ -258,6 +281,24 @@
 .next-project-image {
     height: 150px;
     overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--gray-100);
+}
+
+.placeholder-project {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .next-project-info {
@@ -288,6 +329,18 @@
     .tech-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    .gallery-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-placeholder {
+        min-height: auto;
+    }
+    
+    .placeholder-text img {
+        max-height: none; /* Permitir que las imágenes se adapten a su contenedor sin restricción de altura */
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -303,12 +356,19 @@
         font-size: 2rem;
     }
     
-    .gallery-container,
     .next-projects-grid {
         grid-template-columns: 1fr;
     }
     
     .tech-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .github-link {
+        display: block;
+        margin: 0.5rem auto;
+        width: 80%;
+        text-align: center;
+        justify-content: center;
     }
 }

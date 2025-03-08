@@ -1,5 +1,8 @@
 // Menu toggle para dispositivos móviles
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar EmailJS
+    emailjs.init("_-6CtTYyfKhOOpGcQ");
+    
     const mobileMenu = document.getElementById('mobile-menu');
     const navMenu = document.querySelector('.nav-menu');
     
@@ -73,41 +76,78 @@ document.addEventListener('DOMContentLoaded', function() {
     // Llamada inicial en caso de que la sección ya esté visible
     animateSkillBars();
     
-    // Formulario de contacto (simulado)
+    // Formulario de contacto con EmailJS
     const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Simulación de envío de formulario
+            // Cambiar estado del botón
             const submitButton = contactForm.querySelector('button');
             const originalText = submitButton.textContent;
-            
             submitButton.textContent = 'Enviando...';
             submitButton.disabled = true;
             
-            // Simulamos un retraso de envío
-            setTimeout(() => {
-                // Mostramos mensaje de éxito
-                const formSuccess = document.createElement('div');
-                formSuccess.className = 'form-success';
-                formSuccess.innerHTML = `
-                    <div style="background-color: var(--success-color); color: white; padding: 1rem; border-radius: 4px; margin-top: 1rem;">
-                        <p>¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.</p>
-                    </div>
-                `;
-                
-                contactForm.reset();
-                contactForm.appendChild(formSuccess);
-                
-                submitButton.textContent = originalText;
-                submitButton.disabled = false;
-                
-                // Removemos el mensaje después de 5 segundos
-                setTimeout(() => {
-                    formSuccess.remove();
-                }, 5000);
-            }, 1500);
+            // Obtener los datos del formulario
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Preparar datos para la plantilla
+            const templateParams = {
+                to_name: 'Daniel', // Tu nombre
+                to_email: 'danielpocasangre2006@gmail.com',
+                from_name: name,
+                reply_to: email,
+                message: message,
+                subject: `Nuevo mensaje desde el portafolio de ${name}`
+            };
+            
+            // Enviar email usando EmailJS
+            emailjs.send('service_vk3jt2o', 'template_olte59d', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    
+                    // Mostrar mensaje de éxito
+                    formStatus.innerHTML = `
+                        <div style="background-color: var(--success-color); color: white; padding: 1rem; border-radius: 4px; margin-top: 1rem; margin-bottom: 1rem;">
+                            <p>¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.</p>
+                        </div>
+                    `;
+                    
+                    // Resetear el formulario
+                    contactForm.reset();
+                    
+                    // Restaurar el botón
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    
+                    // Eliminar el mensaje después de 5 segundos
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 5000);
+                })
+                .catch(function(error) {
+                    console.log('FAILED...', error);
+                    
+                    // Mostrar mensaje de error
+                    formStatus.innerHTML = `
+                        <div style="background-color: #d9534f; color: white; padding: 1rem; border-radius: 4px; margin-top: 1rem; margin-bottom: 1rem;">
+                            <p>Hubo un problema al enviar tu mensaje. Por favor, intenta de nuevo más tarde o contáctame directamente a mi correo.</p>
+                        </div>
+                    `;
+                    
+                    // Restaurar el botón
+                    submitButton.textContent = originalText;
+                    submitButton.disabled = false;
+                    
+                    // Eliminar el mensaje después de 5 segundos
+                    setTimeout(() => {
+                        formStatus.innerHTML = '';
+                    }, 5000);
+                });
         });
     }
     
@@ -129,12 +169,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // CV Botón - Simulación de descarga
+    // CV Botón - Descarga real del CV
     const cvButton = document.querySelector('.cv-button');
     if (cvButton) {
         cvButton.addEventListener('click', function(e) {
             e.preventDefault();
-            alert('El CV se descargará. (Esta es una simulación - La funcionalidad real requiere implementación del backend)');
+            
+            // Ruta al archivo CV
+            const cvPath = '../assets/cv-ricardo-garcia.pdf';
+            
+            // Crear un elemento <a> temporal para la descarga
+            const downloadLink = document.createElement('a');
+            downloadLink.href = cvPath;
+            downloadLink.download = 'CV-Ricardo-Garcia-Pocasangre.pdf'; // Nombre del archivo a descargar
+            
+            // Añadir el enlace al DOM, hacer clic y luego removerlo
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
         });
     }
     
