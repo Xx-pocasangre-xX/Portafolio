@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Desarrollador</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#home">Portafolio</a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-links">Inicio</a></li>
+                <li><a href="#about" class="nav-links">Sobre Mí</a></li>
+                <li><a href="#projects" class="nav-links">Proyectos</a></li>
+                <li><a href="#skills" class="nav-links">Habilidades</a></li>
+                <li><a href="#contact" class="nav-links">Contacto</a></li>
+                <li><a href="#" class="cv-button">Ver CV</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-content">
+                <h1>Ricardo Daniel Garcia Pocasangre</h1>
+                <p>Especializado en interfaces y desarrollo frontend con sólidos conocimientos en backend</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary-btn">Ver Proyectos</a>
+                    <a href="#contact" class="btn secondary-btn">Contactar</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Aquí puedes agregar tu foto o una imagen representativa -->
+                <div class="placeholder-image"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <h2 class="section-title">Sobre Mí</h2>
+            <div class="about-container">
+                <div class="about-text">
+                    <p>Soy un desarrollador de software apasionado por crear soluciones eficientes y atractivas. Me especializo en desarrollo frontend y tengo experiencia colaborando en proyectos de backend.</p>
+                    <p>Mi enfoque es crear interfaces intuitivas y optimizadas que mejoren la experiencia del usuario mientras mantengo la funcionalidad y rendimiento del sistema.</p>
+                    <div class="about-details">
+                        <div class="detail">
+                            <i class="fas fa-code"></i>
+                            <h3>Desarrollo Frontend</h3>
+                            <p>Creación de interfaces modernas y responsivas</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-database"></i>
+                            <h3>Soporte Backend</h3>
+                            <p>Colaboración en desarrollo de lógica de servidor</p>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-users"></i>
+                            <h3>Trabajo en Equipo</h3>
+                            <p>Experiencia colaborando en proyectos grupales</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <h2 class="section-title">Proyectos</h2>
+            <div class="projects-container">
+                <!-- Proyecto 1 - ISSS Salud -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="placeholder-project"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>ISSS Salud</h3>
+                        <p>Sistema integrado para gestión de salud con múltiples aplicaciones. Incluye funcionalidades para administración de pacientes, citas y registros médicos.</p>
+                        <div class="project-tech">
+                            <span>Java</span>
+                            <span>Kotlin</span>
+                            <span>Oracle</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Repositorio Java</a>
+                            <a href="https://github.com/xxDianaPadilla/ISSS-Salud.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Repositorio Kotlin</a>
+                            <a href="html/isss-project.html" class="project-link">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2 - WorkFinder -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="placeholder-project"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>WorkFinder</h3>
+                        <p>Plataforma para búsqueda y publicación de ofertas laborales. Responsable del diseño e implementación de las interfaces de usuario.</p>
+                        <div class="project-tech">
+                            <span>Frontend</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Xx-pocasangre-xX/WorkFinder.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Repositorio</a>
+                            <a href="html/workfinder-project.html" class="project-link">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3 - Hospital Bloom -->
+                <div class="project-card">
+                    <div class="project-img">
+                        <div class="placeholder-project"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Hospital Bloom</h3>
+                        <p>Sistema de gestión hospitalaria enfocado en pediatría. Lideré el desarrollo de las interfaces y contribuí con soluciones en el backend.</p>
+                        <div class="project-tech">
+                            <span>Kotlin</span>
+                            <span>Frontend</span>
+                            <span>UI/UX</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git" target="_blank" class="project-link"><i class="fab fa-github"></i> Repositorio</a>
+                            <a href="html/hospital-project.html" class="project-link">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <h2 class="section-title">Habilidades</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Frontend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Kotlin</span>
+                                <span>100%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 100%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Java</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>25%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 25%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C#</span>
+                                <span>30%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 30%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Backend</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Kotlin</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Java</span>
+                                <span>60%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 60%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>JavaScript</span>
+                                <span>35%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 35%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>C#</span>
+                                <span>50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 50%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Herramientas</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Git/GitHub</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Trabajo en Equipo</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span>Figma</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <h2 class="section-title">Contacto</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>danielpocasangre2006@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+503 7989-0503</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <p>github.com/Xx-pocasangre-xX</p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-text">
+                <p>&copy; 2025 Portafolio de Ricardo Daniel Garcia Pocasangre. Todos los derechos reservados.</p>
+            </div>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+/* Estilos para páginas de detalles de proyectos */
+
+/* Header del proyecto */
+.project-details-header {
+    background-color: var(--light-color);
+    padding: 8rem 5% 4rem;
+    text-align: center;
+}
+
+.project-title-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.back-link i {
+    margin-right: 0.5rem;
+}
+
+.back-link:hover {
+    color: var(--primary-color);
+    transform: translateX(-5px);
+}
+
+.project-details-header h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+.project-tags span {
+    background-color: var(--gray-200);
+    color: var(--gray-800);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.project-links-header {
+    margin-top: 2rem;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.github-link i {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.github-link:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenido del proyecto */
+.project-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 5%;
+}
+
+.project-content h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.project-content p {
+    margin-bottom: 1.5rem;
+    color: var(--gray-700);
+    line-height: 1.7;
+}
+
+.project-description, 
+.project-features, 
+.project-tech-stack, 
+.project-challenges,
+.project-role,
+.project-conclusion {
+    margin-bottom: 4rem;
+}
+
+/* Galería de imágenes */
+.project-gallery {
+    margin-bottom: 4rem;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-placeholder {
+    height: 200px;
+    background-color: var(--gray-300);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.placeholder-text {
+    color: var(--gray-700);
+    font-weight: 500;
+}
+
+/* Características del proyecto */
+.project-features ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 2rem;
+}
+
+.project-features li {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--gray-100);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.project-features i {
+    color: var(--success-color);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+}
+
+.project-features h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Tecnologías utilizadas */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tech-item {
+    background-color: var(--gray-100);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.tech-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tech-item i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.tech-item span {
+    font-weight: 500;
+    color: var(--gray-800);
+}
+
+/* Desafíos y soluciones */
+.challenge-item {
+    background-color: var(--gray-100);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.challenge-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.challenge-item strong {
+    color: var(--accent-color);
+}
+
+/* Mi rol en el proyecto */
+.project-role ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-role li {
+    margin-bottom: 0.8rem;
+    color: var(--gray-700);
+}
+
+/* Otros proyectos */
+.next-projects {
+    margin-top: 5rem;
+}
+
+.next-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.next-project-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.next-project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.next-project-image {
+    height: 150px;
+    overflow: hidden;
+}
+
+.next-project-info {
+    padding: 1.5rem;
+}
+
+.next-project-info h3 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.next-project-info p {
+    color: var(--gray-700);
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .project-details-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .project-features ul {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .project-details-header {
+        padding-top: 6rem;
+    }
+    
+    .back-link {
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-details-header h1 {
+        font-size: 2rem;
+    }
+    
+    .gallery-container,
+    .next-projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
