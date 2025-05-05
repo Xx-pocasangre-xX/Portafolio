@@ -1,5 +1,3 @@
-/* Estilos para páginas de detalles de proyectos */
-
 /* Header del proyecto */
 .project-details-header {
     background-color: var(--light-color);
@@ -125,6 +123,7 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
+    background-color: white;
 }
 
 .gallery-item:hover {
@@ -134,17 +133,16 @@
 
 .gallery-placeholder {
     width: 100%;
-    background-color: var(--gray-300);
+    background-color: #f8f9fa;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 200px;
     position: relative;
+    padding: 1rem;
 }
 
 .placeholder-text {
-    color: var(--gray-700);
-    font-weight: 500;
     width: 100%;
     height: 100%;
     display: flex;
@@ -152,13 +150,14 @@
     align-items: center;
 }
 
-/* Estilo para las imágenes dentro de las tarjetas */
+/* Optimización de imágenes dentro de la galería */
 .placeholder-text img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Mantiene la relación de aspecto */
+    object-fit: contain;
     max-height: 300px;
     display: block;
+    border-radius: 4px;
 }
 
 /* Características del proyecto */
@@ -279,12 +278,13 @@
 }
 
 .next-project-image {
-    height: 150px;
+    height: 180px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--gray-100);
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
 }
 
 .placeholder-project {
@@ -298,7 +298,12 @@
 .placeholder-project img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.next-project-card:hover .placeholder-project img {
+    transform: scale(1.05);
 }
 
 .next-project-info {
@@ -335,11 +340,15 @@
     }
     
     .gallery-placeholder {
-        min-height: auto;
+        min-height: 200px;
     }
     
     .placeholder-text img {
-        max-height: none; /* Permitir que las imágenes se adapten a su contenedor sin restricción de altura */
+        max-height: 250px;
+    }
+    
+    .next-project-image {
+        height: 150px;
     }
 }
 
@@ -370,5 +379,13 @@
         width: 80%;
         text-align: center;
         justify-content: center;
+    }
+    
+    .gallery-placeholder {
+        min-height: 180px;
+    }
+    
+    .placeholder-text img {
+        max-height: 200px;
     }
 }

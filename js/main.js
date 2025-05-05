@@ -176,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Ruta al archivo CV
-            const cvPath = '../assets/cv-ricardo-garcia.pdf';
+            const cvPath = '../assets/Currículum.pdf';
             
             // Crear un elemento <a> temporal para la descarga
             const downloadLink = document.createElement('a');
