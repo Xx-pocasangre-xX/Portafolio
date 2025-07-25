@@ -15,7 +15,7 @@
     <header>
         <nav class="navbar">
             <div class="logo">
-                <a href="../index.html">Portafolio</a>
+                <a href="../index.html">Ricardo García</a>
             </div>
             <div class="menu-toggle" id="mobile-menu">
                 <span class="bar"></span>
@@ -25,10 +25,11 @@
             <ul class="nav-menu">
                 <li><a href="../index.html#home" class="nav-links">Inicio</a></li>
                 <li><a href="../index.html#about" class="nav-links">Sobre Mí</a></li>
+                <li><a href="../index.html#experience" class="nav-links">Experiencia</a></li>
                 <li><a href="../index.html#projects" class="nav-links">Proyectos</a></li>
                 <li><a href="../index.html#skills" class="nav-links">Habilidades</a></li>
                 <li><a href="../index.html#contact" class="nav-links">Contacto</a></li>
-                <li><a href="#" class="cv-button">Ver CV</a></li>
+                <li><a href="../assets/Currículum.pdf" target="_blank" class="cv-button">Ver CV</a></li>
             </ul>
         </nav>
     </header>
@@ -38,11 +39,13 @@
             <div class="project-title-container">
                 <a href="../index.html#projects" class="back-link"><i class="fas fa-arrow-left"></i> Volver a Proyectos</a>
                 <h1>Hospital Bloom</h1>
+                <p class="project-subtitle">Sistema de Gestión Hospitalaria Pediátrica - Aplicación Android Nativa</p>
                 <div class="project-tags">
-                    <span>Frontend</span>
-                    <span>Backend</span>
-                    <span>UI Design</span>
-                    <span>Java</span>
+                    <span>Kotlin</span>
+                    <span>Android</span>
+                    <span>Oracle DB</span>
+                    <span>Material Design</span>
+                    <span>UI/UX Mobile</span>
                 </div>
                 <div class="project-links-header">
                     <a href="https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git" target="_blank" class="github-link">
@@ -55,125 +58,341 @@
         <section class="project-content">
             <div class="project-description">
                 <h2>Descripción del Proyecto</h2>
-                <p>Sistema de gestión hospitalaria especializado en pediatría, desarrollado para el Hospital Bloom. El proyecto se enfoca en optimizar procesos internos del hospital, mejorando la eficiencia en la atención médica y seguimiento de pacientes.</p>
-                <p>En este proyecto, fui responsable del diseño e implementación de las interfaces de usuario, además de colaborar en el desarrollo de la lógica de negocio en el backend.</p>
-            </div>
-
-            <div class="project-gallery">
-                <h2>Capturas del Proyecto</h2>
-                <div class="gallery-container">
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-text"><img src="../assets/bloom salud inicio.png" alt="Vista principal de Hospital Bloom"></div>
+                <p>Hospital Bloom es una <strong>aplicación móvil nativa Android desarrollada completamente en Kotlin</strong> especializada en la gestión hospitalaria pediátrica. El proyecto se enfoca en optimizar procesos internos del hospital, mejorando la eficiencia en la atención médica y seguimiento de pacientes pediátricos mediante una interfaz móvil intuitiva y funcional.</p>
+                <p>Como <strong>desarrollador principal de la aplicación Android</strong>, fui responsable del diseño completo de la interfaz de usuario, la implementación de toda la funcionalidad móvil en Kotlin, y la integración con la base de datos Oracle. El proyecto demuestra mi expertise en desarrollo móvil nativo y diseño de aplicaciones especializadas para el sector salud.</p>
+                
+                <div class="project-context">
+                    <div class="context-item">
+                        <i class="fab fa-android"></i>
+                        <div>
+                            <h4>Plataforma</h4>
+                            <p>Aplicación Android nativa en Kotlin</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-text"><img src="../assets/bloom salud interfaz.png" alt="Interfaz de Gestión de Pacientes"></div>
+                    <div class="context-item">
+                        <i class="fas fa-baby"></i>
+                        <div>
+                            <h4>Especialización</h4>
+                            <p>Gestión hospitalaria pediátrica</p>
                         </div>
                     </div>
-                    <div class="gallery-item">
-                        <div class="gallery-placeholder">
-                            <div class="placeholder-text"><img src="../assets/bloom salud estadisticas.png" alt="Panel de Estadísticas Médicas"></div>
+                    <div class="context-item">
+                        <i class="fas fa-database"></i>
+                        <div>
+                            <h4>Base de Datos</h4>
+                            <p>Oracle Database con JDBC</p>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <div class="project-gallery">
+                <h2>Capturas de la Aplicación Android</h2>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-text"><img src="../assets/bloom salud inicio.png" alt="Pantalla de inicio Hospital Bloom"></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-text"><img src="../assets/bloom salud interfaz.png" alt="Interfaz principal de gestión"></div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            <div class="placeholder-text"><img src="../assets/bloom salud estadisticas.png" alt="Dashboard de estadísticas médicas"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Arquitectura móvil -->
+            <div class="project-architecture">
+                <h2>Arquitectura de la Aplicación Android</h2>
+                <div class="architecture-grid">
+                    <div class="architecture-item">
+                        <div class="architecture-icon">
+                            <i class="fab fa-android"></i>
+                        </div>
+                        <h3>Frontend - Android Kotlin</h3>
+                        <p><strong>Usuarios:</strong> Personal de enfermería y administradores médicos</p>
+                        <ul>
+                            <li>Pantalla de autenticación segura para enfermeros</li>
+                            <li>Gestión completa de pacientes pediátricos con RecyclerView</li>
+                            <li>Sistema de registro y edición de pacientes con validaciones</li>
+                            <li>Módulo de gestión de medicamentos y aplicaciones</li>
+                            <li>Asignación de medicamentos a pacientes específicos</li>
+                            <li>Visualización detallada de información médica</li>
+                            <li>Interfaz optimizada para uso en tablets y smartphones</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="architecture-item">
+                        <div class="architecture-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Backend - Oracle Database</h3>
+                        <p><strong>Gestión de datos:</strong> Base de datos empresarial robusta</p>
+                        <ul>
+                            <li>Tabla de usuarios_enfermeros con autenticación segura</li>
+                            <li>Gestión completa de pacientes con datos médicos</li>
+                            <li>Catálogo de medicamentos con descripciones detalladas</li>
+                            <li>Sistema de aplicación_medicamentos con horarios</li>
+                            <li>Relaciones complejas entre pacientes y tratamientos</li>
+                            <li>Triggers automáticos para IDs y validaciones</li>
+                            <li>Consultas optimizadas para reportes médicos</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="project-features">
-                <h2>Características Principales</h2>
+                <h2>Características de la Aplicación Móvil</h2>
                 <ul>
                     <li>
                         <i class="fas fa-check-circle"></i>
                         <div>
-                            <h3>Gestión de Pacientes</h3>
-                            <p>Registro completo de pacientes pediátricos con historial médico, tratamientos y citas programadas.</p>
+                            <h3>Autenticación Segura de Enfermeros</h3>
+                            <p>Sistema de login robusto con validación de credenciales, patrones de email y mensajes de error específicos para garantizar acceso autorizado al sistema.</p>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-check-circle"></i>
                         <div>
-                            <h3>Sistema de Citas</h3>
-                            <p>Programación y seguimiento de citas médicas con notificaciones automáticas para el personal y pacientes.</p>
+                            <h3>Gestión Completa de Pacientes Pediátricos</h3>
+                            <p>CRUD completo de pacientes con RecyclerView optimizado, incluyendo nombres, apellidos, edad, enfermedad, habitación, cama y fecha de ingreso con DatePicker nativo.</p>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-check-circle"></i>
                         <div>
-                            <h3>Estadísticas Médicas</h3>
-                            <p>Visualización de datos estadísticos sobre pacientes, tratamientos y resultados médicos para análisis.</p>
+                            <h3>Sistema de Medicamentos y Aplicaciones</h3>
+                            <p>Módulo completo para registrar medicamentos, asignar horarios de aplicación y vincular tratamientos específicos con pacientes mediante Spinners dinámicos.</p>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-check-circle"></i>
                         <div>
-                            <h3>Control de Medicamentos</h3>
-                            <p>Gestión del inventario de medicamentos y seguimiento de tratamientos asignados a pacientes.</p>
+                            <h3>Interfaz Nativa Material Design</h3>
+                            <p>Diseño moderno siguiendo las guías de Material Design con animaciones Lottie, CardViews, y navegación intuitiva optimizada para dispositivos móviles.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Pantalla de Carga con Animaciones</h3>
+                            <p>SplashScreen profesional con animaciones Lottie que mejoran la experiencia de usuario mientras se inicializa la aplicación y se establece conexión con la base de datos.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h3>Detalles Médicos Integrados</h3>
+                            <p>Vista detallada de pacientes que combina información personal, médica y de tratamiento mediante consultas JOIN complejas para mostrar un panorama completo.</p>
                         </div>
                     </li>
                 </ul>
             </div>
 
             <div class="project-tech-stack">
-                <h2>Tecnologías Utilizadas</h2>
-                <div class="tech-grid">
-                    <div class="tech-item">
-                        <i class="fab fa-java"></i>
-                        <span>Java</span>
+                <h2>Stack Tecnológico Android</h2>
+                <div class="tech-categories">
+                    <div class="tech-category">
+                        <h3><i class="fab fa-android"></i> Desarrollo Android Nativo</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fas fa-code"></i>
+                                <span>Kotlin</span>
+                                <p>Lenguaje principal para desarrollo Android moderno</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fab fa-android"></i>
+                                <span>Android SDK</span>
+                                <p>Framework nativo con API level 26-34</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-list"></i>
+                                <span>RecyclerView</span>
+                                <p>Listas eficientes con adaptadores personalizados</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-layer-group"></i>
+                                <span>Material Design</span>
+                                <p>Componentes UI siguiendo guías de Google</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-play"></i>
+                                <span>Lottie Animations</span>
+                                <p>Animaciones vectoriales para splash screen</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>DatePicker</span>
+                                <p>Selección nativa de fechas de ingreso</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tech-item">
-                        <i class="fas fa-database"></i>
-                        <span>MySQL</span>
+
+                    <div class="tech-category">
+                        <h3><i class="fas fa-database"></i> Base de Datos y Conectividad</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fas fa-database"></i>
+                                <span>Oracle Database</span>
+                                <p>Sistema de gestión de base de datos empresarial</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-plug"></i>
+                                <span>JDBC Oracle Driver</span>
+                                <p>Conectividad directa con Oracle desde Android</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-sync"></i>
+                                <span>Corrutinas Kotlin</span>
+                                <p>Programación asíncrona para operaciones de BD</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>Triggers y Sequences</span>
+                                <p>Automatización de IDs y validaciones en Oracle</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tech-item">
-                        <i class="fab fa-html5"></i>
-                        <span>HTML5</span>
+
+                    <div class="tech-category">
+                        <h3><i class="fas fa-tools"></i> Herramientas de Desarrollo</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Android Studio</span>
+                                <p>IDE oficial para desarrollo Android</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-hammer"></i>
+                                <span>Gradle Build</span>
+                                <p>Sistema de construcción y dependencias</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Emuladores</span>
+                                <p>Testing en múltiples dispositivos virtuales</p>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fas fa-code-branch"></i>
+                                <span>Git</span>
+                                <p>Control de versiones del proyecto</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="tech-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <span>CSS3</span>
+                </div>
+            </div>
+
+            <!-- Mi rol específico en el proyecto Android -->
+            <div class="project-role">
+                <h2>Mi Rol como Desarrollador Android Principal</h2>
+                <div class="contributions-grid">
+                    <div class="contribution-card">
+                        <div class="contribution-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Desarrollo Completo de la App Android</h3>
+                        <p>Responsable del desarrollo completo de la aplicación móvil desde la concepción hasta la implementación final.</p>
+                        <ul>
+                            <li>Diseño e implementación de todas las Activities y Fragments</li>
+                            <li>Desarrollo de adaptadores personalizados para RecyclerView</li>
+                            <li>Implementación de navegación entre pantallas con Intents</li>
+                            <li>Gestión completa del ciclo de vida de la aplicación Android</li>
+                        </ul>
                     </div>
-                    <div class="tech-item">
-                        <i class="fab fa-js"></i>
-                        <span>JavaScript</span>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Diseño UI/UX Móvil Especializado</h3>
+                        <p>Creación completa del diseño de interfaz optimizado para el sector salud y uso en dispositivos móviles.</p>
+                        <ul>
+                            <li>Diseño de layouts XML responsivos para diferentes pantallas</li>
+                            <li>Implementación de Material Design Components</li>
+                            <li>Optimización de la experiencia para personal médico</li>
+                            <li>Integración de animaciones Lottie para mejor UX</li>
+                        </ul>
                     </div>
-                    <div class="tech-item">
-                        <i class="fas fa-window-restore"></i>
-                        <span>Swing/JavaFX</span>
+                    
+                    <div class="contribution-card">
+                        <div class="contribution-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Integración con Base de Datos Oracle</h3>
+                        <p>Implementación completa de la conectividad y operaciones CRUD con Oracle Database desde Android.</p>
+                        <ul>
+                            <li>Configuración de conexión Oracle JDBC en Android</li>
+                            <li>Desarrollo de clases modelo (Pacientes, Medicamentos)</li>
+                            <li>Implementación de operaciones asíncronas con Corrutinas</li>
+                            <li>Optimización de consultas complejas con JOIN</li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
             <div class="project-challenges">
-                <h2>Desafíos y Soluciones</h2>
+                <h2>Desafíos Técnicos del Desarrollo Android</h2>
                 <div class="challenge-item">
-                    <h3>Interfaz Intuitiva para Personal Médico</h3>
-                    <p>El personal médico necesitaba una interfaz que permitiera acceder rápidamente a información crítica de pacientes, sin requerir capacitación técnica extensa.</p>
-                    <p><strong>Solución:</strong> Diseñé una interfaz basada en investigación de experiencia de usuario, con flujos de trabajo optimizados para las tareas más frecuentes y un sistema de navegación simplificado.</p>
+                    <h3>Conectividad Oracle desde Android</h3>
+                    <p>Uno de los mayores desafíos fue establecer una conexión estable y eficiente entre la aplicación Android y la base de datos Oracle, considerando las limitaciones de red móvil y la seguridad.</p>
+                    <p><strong>Solución:</strong> Implementé un sistema robusto usando el driver JDBC de Oracle con manejo de conexiones asíncronas mediante Corrutinas de Kotlin, incluyendo manejo de errores y reintentos automáticos.</p>
                 </div>
+                
                 <div class="challenge-item">
-                    <h3>Visualización de Datos Médicos Complejos</h3>
-                    <p>Los historiales médicos pediátricos contienen información compleja que debía ser accesible y clara para tomar decisiones médicas rápidas.</p>
-                    <p><strong>Solución:</strong> Implementé gráficos y visualizaciones personalizadas que permitían ver de un vistazo la evolución del paciente, con opciones para profundizar en detalles específicos cuando fuera necesario.</p>
+                    <h3>Interfaz Optimizada para Personal Médico</h3>
+                    <p>El personal de enfermería necesitaba una interfaz que fuera intuitiva para el registro rápido de información médica crítica, sin errores que pudieran afectar la atención de pacientes.</p>
+                    <p><strong>Solución:</strong> Diseñé una interfaz siguiendo principios de Material Design con validaciones en tiempo real, mensajes de error claros y flujos optimizados para las tareas más frecuentes del personal médico.</p>
+                </div>
+                
+                <div class="challenge-item">
+                    <h3>Gestión Eficiente de Listas de Pacientes</h3>
+                    <p>La aplicación necesitaba manejar listas grandes de pacientes con operaciones CRUD eficientes y actualizaciones en tiempo real sin afectar el rendimiento.</p>
+                    <p><strong>Solución:</strong> Implementé RecyclerView con ViewHolder pattern y DiffUtil para actualizaciones eficientes, además de operaciones de base de datos optimizadas con transacciones controladas.</p>
+                </div>
+
+                <div class="challenge-item">
+                    <h3>Experiencia de Usuario en Dispositivos Móviles</h3>
+                    <p>Adaptar la funcionalidad compleja de gestión hospitalaria a la experiencia móvil requería un diseño cuidadoso de la navegación y presentación de información.</p>
+                    <p><strong>Solución:</strong> Diseñé un sistema de navegación por categorías con pantallas específicas para cada función, usando CardViews para organizar información y Dialogs para operaciones rápidas.</p>
                 </div>
             </div>
 
-            <div class="project-role">
-                <h2>Mi Rol en el Proyecto</h2>
-                <p>Como responsable del frontend y colaborador en el backend, me encargué de:</p>
-                <ul>
-                    <li>Diseño completo de la interfaz de usuario del sistema</li>
-                    <li>Implementación frontend de los módulos de gestión de pacientes</li>
-                    <li>Desarrollo de componentes para la visualización de datos médicos</li>
-                    <li>Colaboración en la integración de la base de datos con la interfaz</li>
-                    <li>Optimización de la experiencia de usuario para el personal médico</li>
-                </ul>
+            <!-- Código destacado del proyecto -->
+            <div class="project-code-highlights">
+                <h2>Aspectos Técnicos Destacados</h2>
+                <div class="code-highlight-grid">
+                    <div class="code-highlight">
+                        <h3><i class="fas fa-database"></i> Conexión Oracle Optimizada</h3>
+                        <p>Implementación de una clase de conexión robusta con manejo de errores y configuración de red específica para Oracle en Android.</p>
+                    </div>
+                    <div class="code-highlight">
+                        <h3><i class="fas fa-sync"></i> Operaciones Asíncronas</h3>
+                        <p>Uso avanzado de Corrutinas Kotlin para todas las operaciones de base de datos, garantizando que la UI nunca se bloquee.</p>
+                    </div>
+                    <div class="code-highlight">
+                        <h3><i class="fas fa-list"></i> RecyclerView Avanzado</h3>
+                        <p>Implementación de adaptadores personalizados con ViewHolder pattern y operaciones CRUD directas desde los elementos de la lista.</p>
+                    </div>
+                    <div class="code-highlight">
+                        <h3><i class="fas fa-shield-alt"></i> Validaciones Robustas</h3>
+                        <p>Sistema completo de validaciones de formularios con patrones específicos para datos médicos y mensajes de error contextuales.</p>
+                    </div>
+                </div>
             </div>
 
             <div class="project-conclusion">
-                <h2>Aprendizajes y Conclusiones</h2>
-                <p>Este proyecto me permitió profundizar en el desarrollo de sistemas de gestión médica, entendiendo las necesidades específicas del personal hospitalario y los pacientes. Aprendí a diseñar interfaces que equilibran la simplicidad de uso con la complejidad de la información médica que deben manejar.</p>
-                <p>También mejoré mis habilidades técnicas en el desarrollo con Java y la integración con bases de datos, así como en la visualización efectiva de datos complejos.</p>
+                <h2>Impacto y Aprendizajes del Proyecto</h2>
+                <p>El desarrollo de Hospital Bloom me permitió consolidar mis habilidades en <strong>desarrollo Android nativo con Kotlin</strong> y profundizar en la integración con bases de datos empresariales. Aprendí a diseñar interfaces específicas para el sector salud, considerando las necesidades únicas del personal médico y la importancia de la precisión en la gestión de datos de pacientes.</p>
+                
+                <p>Este proyecto demostró mi capacidad para crear aplicaciones móviles complejas que resuelven problemas reales, desde la arquitectura de datos hasta la experiencia de usuario optimizada para dispositivos móviles. La experiencia de trabajar con Oracle Database desde Android me dio una perspectiva valiosa sobre el desarrollo de aplicaciones empresariales móviles.</p>
+                
+                <p>Hospital Bloom representa mi expertise en desarrollo móvil Android y mi comprensión de las necesidades específicas del sector salud, combinando tecnología moderna con soluciones prácticas para mejorar la eficiencia hospitalaria.</p>
             </div>
 
             <div class="next-projects">
@@ -185,7 +404,21 @@
                         </div>
                         <div class="next-project-info">
                             <h3>ISSS Salud</h3>
-                            <p>Sistema integrado para gestión de salud</p>
+                            <p>Sistema integrado para gestión de salud multiplataforma</p>
+                            <span class="project-type">Proyecto Académico</span>
+                        </div>
+                    </a>
+                    <a href="homeclick-project.html" class="next-project-card">
+                        <div class="next-project-image">
+                            <div class="placeholder-project">
+                                <i class="fas fa-home" style="font-size: 3rem; color: #007bff;"></i>
+                                <br>HomeClick
+                            </div>
+                        </div>
+                        <div class="next-project-info">
+                            <h3>HomeClick</h3>
+                            <p>Plataforma inmobiliaria con stack MERN</p>
+                            <span class="project-type">Proyecto Full-Stack</span>
                         </div>
                     </a>
                     <a href="workfinder-project.html" class="next-project-card">
@@ -195,6 +428,7 @@
                         <div class="next-project-info">
                             <h3>WorkFinder</h3>
                             <p>Plataforma de búsqueda de empleo</p>
+                            <span class="project-type">Proyecto Frontend</span>
                         </div>
                     </a>
                 </div>
@@ -205,10 +439,12 @@
     <footer>
         <div class="footer-content">
             <div class="footer-text">
-                <p>&copy; 2025 Portafolio de Ricardo Daniel Garcia Pocasangre. Todos los derechos reservados.</p>
+                <p>&copy; 2025 Portafolio de Ricardo Daniel García Pocasangre. Todos los derechos reservados.</p>
             </div>
             <div class="social-links">
                 <a href="https://github.com/Xx-pocasangre-xX" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:danielpocasangre2006@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+50379890503" title="Teléfono"><i class="fas fa-phone"></i></a>
             </div>
         </div>
     </footer>
