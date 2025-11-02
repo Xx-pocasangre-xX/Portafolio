@@ -41,7 +41,7 @@ const ProjectsCarousel = () => {
       image: issLogo,
       technologies: ['Java Desktop', 'Kotlin Mobile', 'Oracle DB', 'Android', 'Swing UI'],
       type: 'Proyecto Multiplataforma',
-      detailsLink: '/proyecto/isss-salud',
+      detailsLink: '/proyecto/isssSalud',
       githubLink: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git'
     },
     {
@@ -51,7 +51,7 @@ const ProjectsCarousel = () => {
       image: bloomLogo,
       technologies: ['Kotlin', 'Android', 'Oracle DB', 'Material Design', 'Lottie'],
       type: 'Proyecto Android',
-      detailsLink: '/proyecto/hospital-bloom',
+      detailsLink: '/proyecto/hospitalBloom',
       githubLink: 'https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git'
     },
     {

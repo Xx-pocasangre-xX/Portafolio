@@ -32,8 +32,8 @@ function App() {
         {/* Rutas de detalles de proyectos */}
         <Route path="/proyecto/mopt" element={<ProjectDetailsPage projectId="mopt" />} />
         <Route path="/proyecto/homeclick" element={<ProjectDetailsPage projectId="homeclick" />} />
-        <Route path="/proyecto/isss-salud" element={<ProjectDetailsPage projectId="isss" />} />
-        <Route path="/proyecto/hospital-bloom" element={<ProjectDetailsPage projectId="hospital" />} />
+        <Route path="/proyecto/isssSalud" element={<ProjectDetailsPage projectId="isssSalud" />} />
+        <Route path="/proyecto/hospitalBloom" element={<ProjectDetailsPage projectId="hospitalBloom" />} />
         <Route path="/proyecto/workfinder" element={<ProjectDetailsPage projectId="workfinder" />} />
         
         {/* Ruta de fallback */}

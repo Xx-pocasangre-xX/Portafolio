@@ -68,14 +68,14 @@ const projectsData = {
         title: 'ISSS Salud',
         description: 'Sistema integrado de gestión de salud',
         type: 'Proyecto Multiplataforma',
-        link: '/proyecto/isss-salud',
+        link: '/proyecto/isssSalud',
         image: issLogo
       },
       {
         title: 'Hospital Bloom',
         description: 'App móvil de gestión hospitalaria',
         type: 'Proyecto Android',
-        link: '/proyecto/hospital-bloom',
+        link: '/proyecto/hospitalBloom',
         image: bloomLogo
       }
     ]
@@ -128,7 +128,7 @@ const projectsData = {
       }
     ]
   },
-  'isss-salud': {
+  isssSalud: {
     title: 'ISSS Salud',
     subtitle: 'Sistema Integral de Gestión Hospitalaria Multiplataforma',
     isProfessional: false,
@@ -156,7 +156,7 @@ const projectsData = {
         title: 'Hospital Bloom',
         description: 'Sistema de gestión hospitalaria pediátrica',
         type: 'Proyecto Android',
-        link: '/proyecto/hospital-bloom',
+        link: '/proyecto/hospitalBloom',
         image: bloomLogo
       },
       {
@@ -175,7 +175,7 @@ const projectsData = {
       }
     ]
   },
-  'hospital-bloom': {
+  hospitalBloom: {
     title: 'Hospital Bloom',
     subtitle: 'Sistema de Gestión Hospitalaria Pediátrica - Aplicación Android Nativa',
     isProfessional: false,
@@ -204,7 +204,7 @@ const projectsData = {
         title: 'ISSS Salud',
         description: 'Sistema integral de gestión de salud',
         type: 'Proyecto Multiplataforma',
-        link: '/proyecto/isss-salud',
+        link: '/proyecto/isssSalud',
         image: issLogo
       },
       {
@@ -258,14 +258,14 @@ const projectsData = {
         title: 'ISSS Salud',
         description: 'Sistema de gestión de salud',
         type: 'Proyecto Multiplataforma',
-        link: '/proyecto/isss-salud',
+        link: '/proyecto/isssSalud',
         image: issLogo
       },
       {
         title: 'Hospital Bloom',
         description: 'App móvil hospitalaria',
         type: 'Proyecto Android',
-        link: '/proyecto/hospital-bloom',
+        link: '/proyecto/hospitalBloom',
         image: bloomLogo
       }
     ]
