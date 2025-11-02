@@ -141,12 +141,7 @@ const ProjectsCarousel = () => {
                   onMouseLeave={() => setIsAutoPlaying(true)}
                 >
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-[550px] flex flex-col">
-                    {/* Badge */}
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full">
-                        {project.type}
-                      </span>
-                    </div>
+                    
 
                     {/* Image */}
                     <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-xl flex items-center justify-center p-6">
