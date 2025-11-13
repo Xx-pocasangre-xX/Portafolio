@@ -170,8 +170,8 @@ const projectsData = {
     ],
 
     relatedProjects: [
-      { id: 'isss-salud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud', type: 'Proyecto Académico', image: issLogo },
-      { id: 'hospital-bloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
+      { id: 'isssSalud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud', type: 'Proyecto Académico', image: issLogo },
+      { id: 'hospitalBloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
       { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo', type: 'Proyecto de Frontend', image: workfinderLogo }
     ]
   },
@@ -389,8 +389,8 @@ const projectsData = {
 
     relatedProjects: [
       { id: 'mopt', title: 'Sistema Interno MOPT', description: 'Proyecto profesional en prácticas con C# y ASP.NET', type: 'Proyecto Profesional', image: moptLogo },
-      { id: 'isss-salud', title: 'ISSS Salud', description: 'Sistema integral de gestión de salud multiplataforma', type: 'Proyecto Académico', image: issLogo },
-      { id: 'hospital-bloom', title: 'Hospital Bloom', description: 'Aplicación Android para gestión hospitalaria pediátrica', type: 'Proyecto Móvil', image: bloomLogo }
+      { id: 'isssSalud', title: 'ISSS Salud', description: 'Sistema integral de gestión de salud multiplataforma', type: 'Proyecto Académico', image: issLogo },
+      { id: 'hospitalBloom', title: 'Hospital Bloom', description: 'Aplicación Android para gestión hospitalaria pediátrica', type: 'Proyecto Móvil', image: bloomLogo }
     ]
   },
 
@@ -618,7 +618,7 @@ const projectsData = {
 
     relatedProjects: [
       { id: 'mopt', title: 'Sistema Interno MOPT', description: 'Proyecto profesional en prácticas con C# y ASP.NET', type: 'Proyecto Profesional', image: moptLogo },
-      { id: 'hospital-bloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
+      { id: 'hospitalBloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
       { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo con diseño moderno', type: 'Proyecto de Frontend', image: workfinderLogo }
     ]
   },
@@ -870,7 +870,7 @@ const projectsData = {
     ],
 
     relatedProjects: [
-      { id: 'isss-salud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud multiplataforma', type: 'Proyecto Académico', image: issLogo },
+      { id: 'isssSalud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud multiplataforma', type: 'Proyecto Académico', image: issLogo },
       { id: 'homeclick', title: 'HomeClick', description: 'Plataforma inmobiliaria con stack MERN', type: 'Proyecto Full-Stack', image: homeclickLogo },
       { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo', type: 'Proyecto Frontend', image: workfinderLogo }
     ]
