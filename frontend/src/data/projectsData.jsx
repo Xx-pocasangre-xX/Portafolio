@@ -393,98 +393,486 @@ const projectsData = {
       { id: 'hospital-bloom', title: 'Hospital Bloom', description: 'Aplicación Android para gestión hospitalaria pediátrica', type: 'Proyecto Móvil', image: bloomLogo }
     ]
   },
+
   isssSalud: {
+    id: 'isssSalud',
     title: 'ISSS Salud',
     subtitle: 'Sistema Integral de Gestión Hospitalaria Multiplataforma',
     isProfessional: false,
     tags: ['Java Swing', 'Kotlin', 'Oracle DB', 'Android', 'Sistema Integral'],
     githubLink: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git',
-    sections: [
+    githubLink2: 'https://github.com/xxDianaPadilla/ISSS-Salud.git',
+    logo: issLogo,
+    gallery: [
+      { src: isssInicio, alt: 'Pantalla de inicio aplicación Java', caption: 'Interfaz de inicio del sistema de escritorio' },
+      { src: isssInterfaz, alt: 'Interfaz principal aplicación Java', caption: 'Dashboard principal con módulos de gestión' },
+      { src: isssUso, alt: 'Funcionalidades aplicación Java', caption: 'Vista de funcionalidades en uso' }
+    ],
+
+    description: {
+      intro: [
+        'ISSS Salud es un sistema integral de gestión hospitalaria multiplataforma desarrollado para optimizar los procesos administrativos y médicos en instituciones de salud. El proyecto consta de dos aplicaciones complementarias que trabajan de manera sincronizada para proporcionar una solución completa tanto para el personal médico como para los pacientes.',
+        'El sistema incluye una aplicación de escritorio desarrollada en Java destinada a empleados del ISSS (doctores, jefes de enfermería y administradores) y una aplicación móvil en Kotlin diseñada específicamente para pacientes, creando un ecosistema digital completo para la gestión de salud.'
+      ],
+      context: [
+        { icon: Monitor, title: 'Aplicación de Escritorio', description: 'Java Swing para personal médico y administrativo' },
+        { icon: Smartphone, title: 'Aplicación Móvil', description: 'Kotlin Android para pacientes del ISSS' },
+        { icon: Database, title: 'Base de Datos', description: 'Oracle Database compartida entre ambas aplicaciones' }
+      ]
+    },
+
+    architecture: [
       {
-        title: 'Descripción del Proyecto',
-        content: (
-          <div>
-            <p className="text-gray-700 mb-4">
-              ISSS Salud es un sistema integral de gestión hospitalaria multiplataforma desarrollado para 
-              optimizar los procesos administrativos y médicos en instituciones de salud.
-            </p>
-            <p className="text-gray-700 mb-4">
-              El proyecto consta de dos aplicaciones complementarias: una aplicación de escritorio 
-              desarrollada en Java para empleados del ISSS y una aplicación móvil en Kotlin para pacientes.
-            </p>
-          </div>
-        )
+        icon: 'Desktop',
+        iconComponent: Monitor,
+        title: 'Aplicación de Escritorio (Java)',
+        subtitle: 'Usuarios: Doctores, Jefes de Enfermería, Administradores',
+        features: [
+          'Gestión completa de pacientes y expedientes médicos',
+          'Sistema de citas médicas y programación',
+          'Administración de doctores y personal',
+          'Generación de reportes y estadísticas',
+          'Sistema de mensajería entre doctores y pacientes',
+          'Gestión de noticias médicas y comunicados'
+        ]
+      },
+      {
+        icon: 'Mobile',
+        iconComponent: Smartphone,
+        title: 'Aplicación Móvil (Kotlin)',
+        subtitle: 'Usuarios: Pacientes del ISSS',
+        features: [
+          'Solicitud y gestión de citas médicas',
+          'Visualización de citas agendadas',
+          'Chat directo con doctores asignados',
+          'Acceso a noticias médicas y comunicados',
+          'Gestión de perfil personal y expediente',
+          'Descarga de expedientes médicos en PDF'
+        ]
       }
     ],
-    relatedProjects: [
+
+    features: [
       {
-        title: 'Hospital Bloom',
-        description: 'Sistema de gestión hospitalaria pediátrica',
-        type: 'Proyecto Android',
-        link: '/proyecto/hospitalBloom',
-        image: bloomLogo
+        icon: CheckCircle,
+        title: 'Sistema de Gestión de Pacientes',
+        description: 'Registro completo de pacientes con validaciones avanzadas (DUI, teléfono, correo), gestión de expedientes médicos con campos especializados y actualización en tiempo real entre aplicaciones.'
       },
       {
-        title: 'HomeClick',
-        description: 'Plataforma inmobiliaria MERN',
-        type: 'Proyecto Full-Stack',
-        link: '/proyecto/homeclick',
-        image: homeclickLogo
+        icon: Calendar,
+        title: 'Plataforma de Citas Médicas',
+        description: 'Los pacientes pueden solicitar citas desde la app móvil, los jefes de enfermería las procesan en el sistema de escritorio, y los doctores las gestionan con notificaciones automáticas.'
       },
       {
-        title: 'Sistema MOPT',
-        description: 'Proyecto profesional',
-        type: 'Proyecto Profesional',
-        link: '/proyecto/mopt',
-        image: moptLogo
+        icon: MessageSquare,
+        title: 'Sistema de Mensajería Integrado',
+        description: 'Comunicación directa entre doctores y pacientes con mensajes en tiempo real, historial de conversaciones y notificaciones push en la aplicación móvil.'
+      },
+      {
+        icon: FileText,
+        title: 'Gestión de Expedientes Médicos',
+        description: 'Expedientes completos con antecedentes familiares, alergias, resultados de laboratorio y generación de PDFs para descarga desde la app móvil del paciente.'
+      },
+      {
+        icon: Bell,
+        title: 'Portal de Noticias Médicas',
+        description: 'Sistema de publicación de noticias por administradores con imágenes, fechas y categorización, visible tanto en escritorio como en móvil para mantener informados a todos los usuarios.'
+      },
+      {
+        icon: Shield,
+        title: 'Seguridad y Autenticación',
+        description: 'Sistema de autenticación por roles con encriptación SHA-256, recuperación de contraseñas por correo y validaciones de seguridad en ambas aplicaciones.'
       }
+    ],
+
+    techStack: {
+      desktop: [
+        { icon: '☕', name: 'Java SE', description: 'Lenguaje principal para lógica de negocio' },
+        { icon: '🖼️', name: 'Java Swing', description: 'Framework para interfaces gráficas' },
+        { icon: '🔨', name: 'Apache Ant', description: 'Herramienta de construcción y gestión' },
+        { icon: '🏗️', name: 'Patrón MVC', description: 'Arquitectura Modelo-Vista-Controlador' }
+      ],
+      mobile: [
+        { icon: '🤖', name: 'Kotlin', description: 'Lenguaje principal para Android' },
+        { icon: '📱', name: 'Android Studio', description: 'IDE y framework de desarrollo' },
+        { icon: '📋', name: 'RecyclerView', description: 'Listas dinámicas y adaptadores' },
+        { icon: '🎬', name: 'Lottie', description: 'Animaciones y pantallas de carga' },
+        { icon: '🖼️', name: 'Glide', description: 'Carga y gestión de imágenes' },
+        { icon: '📄', name: 'PDF Generation', description: 'Generación de documentos médicos' }
+      ],
+      database: [
+        { icon: '🗄️', name: 'Oracle Database', description: 'Sistema de gestión de base de datos' },
+        { icon: '🔌', name: 'JDBC', description: 'Conectividad con base de datos' },
+        { icon: '📧', name: 'JavaMail API', description: 'Sistema de envío de correos' },
+        { icon: '🔄', name: 'Corrutinas', description: 'Programación asíncrona en Kotlin' }
+      ]
+    },
+
+    myRole: [
+      {
+        icon: Palette,
+        title: 'Diseño de Interfaces',
+        description: 'Responsable del diseño completo de las interfaces de usuario tanto en la aplicación de escritorio como en la móvil.',
+        contributions: [
+          'Diseño de todas las pantallas del sistema de escritorio usando Java Swing',
+          'Creación de layouts responsivos para la aplicación móvil',
+          'Implementación de temas claros y oscuros en ambas aplicaciones',
+          'Diseño de iconografía y elementos visuales consistentes'
+        ]
+      },
+      {
+        icon: Code,
+        title: 'Desarrollo Frontend',
+        description: 'Implementación completa de la lógica de presentación y experiencia de usuario en ambas plataformas.',
+        contributions: [
+          'Desarrollo de componentes interactivos en Java Swing',
+          'Implementación de Activities y Fragments en Android',
+          'Integración de RecyclerViews y adaptadores personalizados',
+          'Sistema de navegación entre pantallas'
+        ]
+      },
+      {
+        icon: Database,
+        title: 'Integración Backend',
+        description: 'Colaboración estrecha en el desarrollo de la lógica de negocio y conexiones con la base de datos.',
+        contributions: [
+          'Implementación de controladores MVC en Java',
+          'Desarrollo de clases de conexión a Oracle Database',
+          'Integración de validaciones de formularios',
+          'Sistema de encriptación y seguridad'
+        ]
+      }
+    ],
+
+    challenges: [
+      {
+        title: 'Sincronización entre Aplicaciones',
+        problem: 'El mayor desafío fue asegurar que las dos aplicaciones (escritorio y móvil) trabajaran de manera sincronizada, compartiendo la misma base de datos Oracle sin conflictos de concurrencia.',
+        solution: 'Implementamos un sistema de transacciones controladas y actualizaciones en tiempo real usando corrutinas en Kotlin y threading apropiado en Java para evitar bloqueos de base de datos.'
+      },
+      {
+        title: 'Gestión de Roles y Permisos',
+        problem: 'Necesitábamos un sistema que diferenciara claramente entre doctores, jefes de enfermería, administradores y pacientes, con permisos específicos para cada rol.',
+        solution: 'Diseñamos una arquitectura de roles con validaciones tanto en frontend como backend, asegurando que cada usuario solo acceda a las funcionalidades permitidas según su rol.'
+      },
+      {
+        title: 'Mensajería en Tiempo Real',
+        problem: 'Implementar un sistema de chat funcional entre doctores (escritorio) y pacientes (móvil) que fuera fluido y confiable.',
+        solution: 'Utilizamos consultas periódicas optimizadas a la base de datos con corrutinas para mantener actualizada la mensajería sin sobrecargar el sistema.'
+      },
+      {
+        title: 'Generación de PDFs en Móvil',
+        problem: 'Los pacientes necesitaban descargar sus expedientes médicos en formato PDF directamente desde la aplicación móvil.',
+        solution: 'Implementamos un sistema de generación de PDFs usando la API nativa de Android con permisos de almacenamiento y notificaciones de descarga completada.'
+      }
+    ],
+
+    impact: {
+      metrics: [
+        { icon: Users, title: 'Usuarios Múltiples', description: 'Sistema completo para empleados ISSS y pacientes' },
+        { icon: Layers, title: 'Multiplataforma', description: 'Aplicaciones sincronizadas para escritorio y móvil' },
+        { icon: Shield, title: 'Seguridad', description: 'Encriptación y validaciones robustas' },
+        { icon: MessageSquare, title: 'Comunicación', description: 'Sistema de mensajería integrado' }
+      ],
+      description: 'El sistema ISSS Salud representa una solución integral que moderniza completamente la gestión hospitalaria, proporcionando herramientas eficientes tanto para el personal médico como para los pacientes. La implementación de dos aplicaciones complementarias permite una cobertura total de las necesidades institucionales.'
+    },
+
+    learnings: [
+      {
+        icon: '💻',
+        title: 'Desarrollo Multiplataforma',
+        items: [
+          'Dominio avanzado de Java Swing para aplicaciones de escritorio',
+          'Desarrollo nativo Android con Kotlin y arquitectura moderna',
+          'Integración y sincronización entre diferentes plataformas',
+          'Gestión de estados compartidos entre aplicaciones'
+        ]
+      },
+      {
+        icon: '🗄️',
+        title: 'Gestión de Datos Enterprise',
+        items: [
+          'Diseño y optimización de bases de datos Oracle',
+          'Manejo de transacciones complejas y concurrencia',
+          'Implementación de sistemas de backup y seguridad',
+          'Optimización de consultas para aplicaciones en producción'
+        ]
+      },
+      {
+        icon: '👥',
+        title: 'Trabajo en Equipo',
+        items: [
+          'Colaboración efectiva en proyectos de gran escala',
+          'Coordinación entre desarrollo frontend y backend',
+          'Metodologías ágiles y control de versiones con Git',
+          'Documentación técnica y comunicación con stakeholders'
+        ]
+      }
+    ],
+
+    conclusion: [
+      'El desarrollo del sistema ISSS Salud ha sido una experiencia transformadora que me permitió trabajar en un proyecto de escala real con impacto directo en la atención médica. La complejidad de gestionar dos aplicaciones sincronizadas me enseñó la importancia de la arquitectura de software bien planificada y la comunicación efectiva entre sistemas.',
+      'Este proyecto consolidó mis habilidades tanto en desarrollo de escritorio con Java como en desarrollo móvil con Kotlin, además de profundizar mis conocimientos en bases de datos enterprise y sistemas de seguridad. La experiencia de trabajar con requisitos reales de usuarios médicos y pacientes me dio una perspectiva valiosa sobre el desarrollo de software centrado en el usuario.',
+      'El éxito de este proyecto refuerza mi pasión por crear soluciones tecnológicas que generen un impacto positivo en la vida de las personas, especialmente en sectores críticos como la salud.'
+    ],
+
+    relatedProjects: [
+      { id: 'mopt', title: 'Sistema Interno MOPT', description: 'Proyecto profesional en prácticas con C# y ASP.NET', type: 'Proyecto Profesional', image: moptLogo },
+      { id: 'hospital-bloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
+      { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo con diseño moderno', type: 'Proyecto de Frontend', image: workfinderLogo }
     ]
   },
+
   hospitalBloom: {
+    id: 'hospitalBloom',
     title: 'Hospital Bloom',
     subtitle: 'Sistema de Gestión Hospitalaria Pediátrica - Aplicación Android Nativa',
     isProfessional: false,
     tags: ['Kotlin', 'Android', 'Oracle DB', 'Material Design', 'UI/UX Mobile'],
     githubLink: 'https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git',
-    sections: [
+    logo: bloomLogo,
+    gallery: [
+      // { src: bloomInicio, alt: 'Pantalla de inicio Hospital Bloom', caption: 'SplashScreen con animación Lottie' },
+      // { src: bloomInterfaz, alt: 'Interfaz principal de gestión', caption: 'Dashboard principal con módulos de pacientes' },
+      // { src: bloomEstadisticas, alt: 'Dashboard de estadísticas médicas', caption: 'Vista de estadísticas y reportes' }
+    ],
+
+    description: {
+      intro: [
+        'Hospital Bloom es una aplicación móvil nativa Android desarrollada completamente en Kotlin especializada en la gestión hospitalaria pediátrica. El proyecto se enfoca en optimizar procesos internos del hospital, mejorando la eficiencia en la atención médica y seguimiento de pacientes pediátricos mediante una interfaz móvil intuitiva y funcional.',
+        'Como desarrollador principal de la aplicación Android, fui responsable del diseño completo de la interfaz de usuario, la implementación de toda la funcionalidad móvil en Kotlin, y la integración con la base de datos Oracle. El proyecto demuestra mi expertise en desarrollo móvil nativo y diseño de aplicaciones especializadas para el sector salud.'
+      ],
+      context: [
+        { icon: Smartphone, title: 'Plataforma', description: 'Aplicación Android nativa en Kotlin' },
+        { icon: Heart, title: 'Especialización', description: 'Gestión hospitalaria pediátrica' },
+        { icon: Database, title: 'Base de Datos', description: 'Oracle Database con JDBC' }
+      ]
+    },
+
+    architecture: [
       {
-        title: 'Descripción del Proyecto',
-        content: (
-          <div>
-            <p className="text-gray-700 mb-4">
-              Hospital Bloom es una aplicación móvil nativa Android desarrollada completamente en Kotlin, 
-              especializada en la gestión hospitalaria pediátrica.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Como desarrollador principal de la aplicación Android, fui responsable del diseño completo 
-              de la interfaz de usuario, la implementación de toda la funcionalidad móvil en Kotlin, 
-              y la integración con la base de datos Oracle.
-            </p>
-          </div>
-        )
+        icon: 'Android',
+        iconComponent: Smartphone,
+        title: 'Frontend - Android Kotlin',
+        subtitle: 'Usuarios: Personal de enfermería y administradores médicos',
+        features: [
+          'Pantalla de autenticación segura para enfermeros',
+          'Gestión completa de pacientes pediátricos con RecyclerView',
+          'Sistema de registro y edición de pacientes con validaciones',
+          'Módulo de gestión de medicamentos y aplicaciones',
+          'Asignación de medicamentos a pacientes específicos',
+          'Visualización detallada de información médica',
+          'Interfaz optimizada para uso en tablets y smartphones'
+        ]
+      },
+      {
+        icon: 'Database',
+        iconComponent: Database,
+        title: 'Backend - Oracle Database',
+        subtitle: 'Gestión de datos: Base de datos empresarial robusta',
+        features: [
+          'Tabla de usuarios_enfermeros con autenticación segura',
+          'Gestión completa de pacientes con datos médicos',
+          'Catálogo de medicamentos con descripciones detalladas',
+          'Sistema de aplicación_medicamentos con horarios',
+          'Relaciones complejas entre pacientes y tratamientos',
+          'Triggers automáticos para IDs y validaciones',
+          'Consultas optimizadas para reportes médicos'
+        ]
       }
     ],
-    relatedProjects: [
+
+    features: [
       {
-        title: 'ISSS Salud',
-        description: 'Sistema integral de gestión de salud',
-        type: 'Proyecto Multiplataforma',
-        link: '/proyecto/isssSalud',
-        image: issLogo
+        icon: Shield,
+        title: 'Autenticación Segura de Enfermeros',
+        description: 'Sistema de login robusto con validación de credenciales, patrones de email y mensajes de error específicos para garantizar acceso autorizado al sistema.'
       },
       {
-        title: 'HomeClick',
-        description: 'Plataforma inmobiliaria',
-        type: 'Proyecto Full-Stack',
-        link: '/proyecto/homeclick',
-        image: homeclickLogo
+        icon: Users,
+        title: 'Gestión Completa de Pacientes Pediátricos',
+        description: 'CRUD completo de pacientes con RecyclerView optimizado, incluyendo nombres, apellidos, edad, enfermedad, habitación, cama y fecha de ingreso con DatePicker nativo.'
       },
       {
-        title: 'WorkFinder',
-        description: 'Plataforma de empleo',
-        link: '/proyecto/workfinder',
-        image: workfinderLogo
+        icon: Package,
+        title: 'Sistema de Medicamentos y Aplicaciones',
+        description: 'Módulo completo para registrar medicamentos, asignar horarios de aplicación y vincular tratamientos específicos con pacientes mediante Spinners dinámicos.'
+      },
+      {
+        icon: Palette,
+        title: 'Interfaz Nativa Material Design',
+        description: 'Diseño moderno siguiendo las guías de Material Design con animaciones Lottie, CardViews, y navegación intuitiva optimizada para dispositivos móviles.'
+      },
+      {
+        icon: Zap,
+        title: 'Pantalla de Carga con Animaciones',
+        description: 'SplashScreen profesional con animaciones Lottie que mejoran la experiencia de usuario mientras se inicializa la aplicación y se establece conexión con la base de datos.'
+      },
+      {
+        icon: FileText,
+        title: 'Detalles Médicos Integrados',
+        description: 'Vista detallada de pacientes que combina información personal, médica y de tratamiento mediante consultas JOIN complejas para mostrar un panorama completo.'
       }
+    ],
+
+    techStack: {
+      android: [
+        { icon: '🤖', name: 'Kotlin', description: 'Lenguaje principal para desarrollo Android moderno' },
+        { icon: '📱', name: 'Android SDK', description: 'Framework nativo con API level 26-34' },
+        { icon: '📋', name: 'RecyclerView', description: 'Listas eficientes con adaptadores personalizados' },
+        { icon: '🎨', name: 'Material Design', description: 'Componentes UI siguiendo guías de Google' },
+        { icon: '🎬', name: 'Lottie Animations', description: 'Animaciones vectoriales para splash screen' },
+        { icon: '📅', name: 'DatePicker', description: 'Selección nativa de fechas de ingreso' }
+      ],
+      database: [
+        { icon: '🗄️', name: 'Oracle Database', description: 'Sistema de gestión de base de datos empresarial' },
+        { icon: '🔌', name: 'JDBC Oracle Driver', description: 'Conectividad directa con Oracle desde Android' },
+        { icon: '🔄', name: 'Corrutinas Kotlin', description: 'Programación asíncrona para operaciones de BD' },
+        { icon: '⚙️', name: 'Triggers y Sequences', description: 'Automatización de IDs y validaciones en Oracle' }
+      ],
+      tools: [
+        { icon: '💻', name: 'Android Studio', description: 'IDE oficial para desarrollo Android' },
+        { icon: '🔨', name: 'Gradle Build', description: 'Sistema de construcción y dependencias' },
+        { icon: '📱', name: 'Emuladores', description: 'Testing en múltiples dispositivos virtuales' },
+        { icon: '🌿', name: 'Git', description: 'Control de versiones del proyecto' }
+      ]
+    },
+
+    myRole: [
+      {
+        icon: Smartphone,
+        title: 'Desarrollo Completo de la App Android',
+        description: 'Responsable del desarrollo completo de la aplicación móvil desde la concepción hasta la implementación final.',
+        contributions: [
+          'Diseño e implementación de todas las Activities y Fragments',
+          'Desarrollo de adaptadores personalizados para RecyclerView',
+          'Implementación de navegación entre pantallas con Intents',
+          'Gestión completa del ciclo de vida de la aplicación Android'
+        ]
+      },
+      {
+        icon: Palette,
+        title: 'Diseño UI/UX Móvil Especializado',
+        description: 'Creación completa del diseño de interfaz optimizado para el sector salud y uso en dispositivos móviles.',
+        contributions: [
+          'Diseño de layouts XML responsivos para diferentes pantallas',
+          'Implementación de Material Design Components',
+          'Optimización de la experiencia para personal médico',
+          'Integración de animaciones Lottie para mejor UX'
+        ]
+      },
+      {
+        icon: Database,
+        title: 'Integración con Base de Datos Oracle',
+        description: 'Implementación completa de la conectividad y operaciones CRUD con Oracle Database desde Android.',
+        contributions: [
+          'Configuración de conexión Oracle JDBC en Android',
+          'Desarrollo de clases modelo (Pacientes, Medicamentos)',
+          'Implementación de operaciones asíncronas con Corrutinas',
+          'Optimización de consultas complejas con JOIN'
+        ]
+      }
+    ],
+
+    challenges: [
+      {
+        title: 'Conectividad Oracle desde Android',
+        problem: 'Uno de los mayores desafíos fue establecer una conexión estable y eficiente entre la aplicación Android y la base de datos Oracle, considerando las limitaciones de red móvil y la seguridad.',
+        solution: 'Implementé un sistema robusto usando el driver JDBC de Oracle con manejo de conexiones asíncronas mediante Corrutinas de Kotlin, incluyendo manejo de errores y reintentos automáticos.'
+      },
+      {
+        title: 'Interfaz Optimizada para Personal Médico',
+        problem: 'El personal de enfermería necesitaba una interfaz que fuera intuitiva para el registro rápido de información médica crítica, sin errores que pudieran afectar la atención de pacientes.',
+        solution: 'Diseñé una interfaz siguiendo principios de Material Design con validaciones en tiempo real, mensajes de error claros y flujos optimizados para las tareas más frecuentes del personal médico.'
+      },
+      {
+        title: 'Gestión Eficiente de Listas de Pacientes',
+        problem: 'La aplicación necesitaba manejar listas grandes de pacientes con operaciones CRUD eficientes y actualizaciones en tiempo real sin afectar el rendimiento.',
+        solution: 'Implementé RecyclerView con ViewHolder pattern y DiffUtil para actualizaciones eficientes, además de operaciones de base de datos optimizadas con transacciones controladas.'
+      },
+      {
+        title: 'Experiencia de Usuario en Dispositivos Móviles',
+        problem: 'Adaptar la funcionalidad compleja de gestión hospitalaria a la experiencia móvil requería un diseño cuidadoso de la navegación y presentación de información.',
+        solution: 'Diseñé un sistema de navegación por categorías con pantallas específicas para cada función, usando CardViews para organizar información y Dialogs para operaciones rápidas.'
+      }
+    ],
+
+    codeHighlights: [
+      {
+        icon: Database,
+        title: 'Conexión Oracle Optimizada',
+        description: 'Implementación de una clase de conexión robusta con manejo de errores y configuración de red específica para Oracle en Android.'
+      },
+      {
+        icon: Zap,
+        title: 'Operaciones Asíncronas',
+        description: 'Uso avanzado de Corrutinas Kotlin para todas las operaciones de base de datos, garantizando que la UI nunca se bloquee.'
+      },
+      {
+        icon: Layers,
+        title: 'RecyclerView Avanzado',
+        description: 'Implementación de adaptadores personalizados con ViewHolder pattern y operaciones CRUD directas desde los elementos de la lista.'
+      },
+      {
+        icon: Shield,
+        title: 'Validaciones Robustas',
+        description: 'Sistema completo de validaciones de formularios con patrones específicos para datos médicos y mensajes de error contextuales.'
+      }
+    ],
+
+    impact: {
+      metrics: [
+        { icon: Users, title: 'Usuarios', description: 'Personal de enfermería y administradores' },
+        { icon: Heart, title: 'Especialización', description: 'Gestión pediátrica especializada' },
+        { icon: Smartphone, title: 'Movilidad', description: 'Acceso desde tablets y smartphones' },
+        { icon: Database, title: 'Datos Seguros', description: 'Oracle Database empresarial' }
+      ],
+      description: 'Hospital Bloom demostró la capacidad de crear aplicaciones móviles complejas específicas para el sector salud, mejorando la eficiencia del personal de enfermería en la gestión de pacientes pediátricos mediante una interfaz intuitiva y funcional.'
+    },
+
+    learnings: [
+      {
+        icon: '📱',
+        title: 'Desarrollo Android Nativo',
+        items: [
+          'Dominio profundo de Kotlin y Android SDK moderno',
+          'Implementación de patrones de arquitectura Android',
+          'Manejo avanzado de RecyclerView y adaptadores',
+          'Integración de Material Design Components'
+        ]
+      },
+      {
+        icon: '🗄️',
+        title: 'Bases de Datos Móviles',
+        items: [
+          'Conexión Oracle JDBC desde aplicaciones móviles',
+          'Optimización de consultas para dispositivos móviles',
+          'Manejo de transacciones y concurrencia',
+          'Programación asíncrona con Corrutinas'
+        ]
+      },
+      {
+        icon: '🎨',
+        title: 'UX/UI Móvil',
+        items: [
+          'Diseño de interfaces para sector salud',
+          'Optimización de flujos para tareas médicas',
+          'Implementación de animaciones efectivas',
+          'Diseño responsive para múltiples dispositivos'
+        ]
+      }
+    ],
+
+    conclusion: [
+      'El desarrollo de Hospital Bloom me permitió consolidar mis habilidades en desarrollo Android nativo con Kotlin y profundizar en la integración con bases de datos empresariales. Aprendí a diseñar interfaces específicas para el sector salud, considerando las necesidades únicas del personal médico y la importancia de la precisión en la gestión de datos de pacientes.',
+      'Este proyecto demostró mi capacidad para crear aplicaciones móviles complejas que resuelven problemas reales, desde la arquitectura de datos hasta la experiencia de usuario optimizada para dispositivos móviles. La experiencia de trabajar con Oracle Database desde Android me dio una perspectiva valiosa sobre el desarrollo de aplicaciones empresariales móviles.',
+      'Hospital Bloom representa mi expertise en desarrollo móvil Android y mi comprensión de las necesidades específicas del sector salud, combinando tecnología moderna con soluciones prácticas para mejorar la eficiencia hospitalaria.'
+    ],
+
+    relatedProjects: [
+      { id: 'isss-salud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud multiplataforma', type: 'Proyecto Académico', image: issLogo },
+      { id: 'homeclick', title: 'HomeClick', description: 'Plataforma inmobiliaria con stack MERN', type: 'Proyecto Full-Stack', image: homeclickLogo },
+      { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo', type: 'Proyecto Frontend', image: workfinderLogo }
     ]
   },
   workfinder: {

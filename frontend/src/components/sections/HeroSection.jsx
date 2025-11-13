@@ -4,7 +4,7 @@ import profileImage from '../../assets/Perfil.png';
 const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/assets/Currículum.pdf';
+    link.href = '/Cv.pdf'; // <-- ya no usas rutas relativas
     link.download = 'CV-Ricardo-Garcia-Pocasangre.pdf';
     link.click();
   };
@@ -18,29 +18,29 @@ const HeroSection = () => {
             Ricardo Daniel García Pocasangre
           </h1>
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600 mb-4">
-            Estudiante en Desarrollo de Software
+            Graduado de bachillerato en Desarrollo de Software
           </h2>
           <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">
-            Estudiante de 3° año de bachillerato en Desarrollo de Software con experiencia práctica en desarrollo
+            Graduado de bachillerato en Desarrollo de Software con experiencia práctica en desarrollo
             web, móvil, diseño UI/UX y pruebas de calidad. Especializado en interfaces frontend con sólidos
             conocimientos en backend y desarrollo multiplataforma.
           </p>
-          
+
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a 
+            <a
               href="#projects"
               className="px-8 py-3 bg-gray-800 text-white rounded-lg font-medium hover:bg-gray-700 transform hover:-translate-y-1 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Ver Proyectos
             </a>
-            <a 
+            <a
               href="#contact"
               className="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-lg font-medium hover:bg-gray-800 hover:text-white transform hover:-translate-y-1 transition-all duration-300"
             >
               Contactar
             </a>
-            <button 
+            <button
               onClick={handleDownloadCV}
               className="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-lg font-medium hover:bg-gray-800 hover:text-white transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
             >
@@ -55,8 +55,8 @@ const HeroSection = () => {
         {/* Image */}
         <div className="flex-1 flex justify-center items-center">
           <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300 bg-gray-300">
-            <img 
-              src={profileImage} 
+            <img
+              src={profileImage}
               alt="Ricardo Daniel García Pocasangre"
               className="w-full h-full object-cover"
             />

@@ -72,7 +72,7 @@ const AboutSection = () => {
         
         <div className="max-w-4xl mx-auto mb-12">
           <p className="text-gray-700 mb-6 text-justify leading-relaxed">
-            Soy estudiante de 3° año de bachillerato técnico vocacional en Desarrollo de Software en el
+            Me gradue de bachillerato técnico en Desarrollo de Software en el
             Instituto Técnico Ricaldone. Mi pasión es crear soluciones tecnológicas eficientes y atractivas
             que mejoren la experiencia del usuario, especializándome en desarrollo multiplataforma y diseño
             de interfaces.

@@ -210,7 +210,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
               Stack Tecnológico
             </h2>
             <div className="bg-white rounded-xl shadow-md p-6 lg:p-8">
-              {typeof project.techStack === 'object' && project.techStack.frontend ? (
+              {typeof project.techStack === 'object' && !Array.isArray(project.techStack) ?  (
                 // Stack con categorías
                 <div className="space-y-8">
                   {Object.entries(project.techStack).map(([category, techs]) => (

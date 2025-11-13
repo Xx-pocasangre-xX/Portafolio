@@ -7,62 +7,60 @@ const SkillsSection = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
+        if (entry.isIntersecting) setIsVisible(true);
       },
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, []);
+
+  const skillLevelWidths = {
+    'Básico': 25,
+    'Intermedio': 50,
+    'Avanzado': 75,
+    'Profesional': 100
+  };
 
   const skillCategories = [
     {
       title: 'Lenguajes de Programación',
       skills: [
-        { name: 'Kotlin', level: 92 },
-        { name: 'Java', level: 88 },
-        { name: 'JavaScript', level: 82 },
-        { name: 'C#', level: 78 }
+        { name: 'Kotlin', level: 'Avanzado' },
+        { name: 'Java', level: 'Profesional' },
+        { name: 'JavaScript', level: 'Avanzado' },
+        { name: 'C#', level: 'Intermedio' }
       ]
     },
     {
       title: 'Frameworks y Librerías',
       skills: [
-        { name: 'Android SDK', level: 90 },
-        { name: 'React', level: 83 },
-        { name: 'Node.js', level: 78 },
-        { name: 'Express.js', level: 76 },
-        { name: 'ASP.NET', level: 75 },
-        { name: 'Java Swing', level: 85 }
+        { name: 'Android SDK', level: 'Avanzado' },
+        { name: 'React', level: 'Profesional' },
+        { name: 'Node.js', level: 'Avanzado' },
+        { name: 'Express.js', level: 'Avanzado' },
+        { name: 'ASP.NET', level: 'Intermedio' },
+        { name: 'Java Swing', level: 'Avanzado' }
       ]
     },
     {
       title: 'Bases de Datos',
       skills: [
-        { name: 'Oracle Database', level: 87 },
-        { name: 'MongoDB', level: 82 },
-        { name: 'SQL Server', level: 80 }
+        { name: 'Oracle Database', level: 'Avanzado' },
+        { name: 'MongoDB', level: 'Avanzado' },
+        { name: 'SQL Server', level: 'Intermedio' }
       ]
     },
     {
       title: 'Herramientas y Metodologías',
       skills: [
-        { name: 'Figma', level: 95 },
-        { name: 'Git/GitHub', level: 88 },
-        { name: 'Android Studio', level: 90 },
-        { name: 'Visual Studio', level: 82 },
-        { name: 'Diseño UI/UX', level: 92 },
-        { name: 'QA Testing', level: 85 }
+        { name: 'Figma', level: 'Avanzado' },
+        { name: 'Git/GitHub', level: 'Profesional' },
+        { name: 'Android Studio', level: 'Avanzado' },
+        { name: 'Visual Studio', level: 'Avanzado' },
+        { name: 'Diseño UI/UX', level: 'Profesional' },
+        { name: 'QA Testing', level: 'Avanzado' }
       ]
     }
   ];
@@ -126,13 +124,13 @@ const SkillsSection = () => {
                   <div key={skillIndex}>
                     <div className="flex justify-between mb-1">
                       <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-blue-600 font-semibold">{skill.level}%</span>
+                      <span className="text-blue-600 font-semibold">{skill.level}</span>
                     </div>
                     <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
                       <div
                         className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full transition-all duration-1000 ease-out"
                         style={{
-                          width: isVisible ? `${skill.level}%` : '0%',
+                          width: isVisible ? `${skillLevelWidths[skill.level]}%` : '0%',
                           transitionDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`
                         }}
                       />
@@ -152,7 +150,7 @@ const SkillsSection = () => {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {softSkills.map((skill, index) => (
-              <div 
+              <div
                 key={index}
                 className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
               >
