@@ -6,7 +6,6 @@ import moptLogo from '../../assets/mopt-logo.png';
 import homeclickLogo from '../../assets/homeclick-logo.png';
 import issLogo from '../../assets/LOGO AZUL.png';
 import bloomLogo from '../../assets/bloom salud.png';
-import workfinderLogo from '../../assets/Work Finder-1 02 Artboard 4.png';
 
 const ProjectsCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,16 +52,6 @@ const ProjectsCarousel = () => {
       type: 'Proyecto Android',
       detailsLink: '/proyecto/hospitalBloom',
       githubLink: 'https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git'
-    },
-    {
-      id: 'workfinder',
-      title: 'WorkFinder - Plataforma de Empleo',
-      description: 'Plataforma web completa para búsqueda y publicación de ofertas laborales.',
-      image: workfinderLogo,
-      technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'UI/UX'],
-      type: 'Proyecto Frontend',
-      detailsLink: '/proyecto/workfinder',
-      githubLink: 'https://github.com/Xx-pocasangre-xX/WorkFinder.git'
     }
   ];
 
