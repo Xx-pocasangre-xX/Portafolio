@@ -42,7 +42,7 @@ const ProjectsCarousel = () => {
       type: 'Proyecto Multiplataforma',
       detailsLink: '/proyecto/isssSalud',
       githubLinkJ: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git',
-      githubLinkA: 'https://github.com/xxDianaPadilla/ISSS-Salud.git',
+      githubLinkA: 'https://github.com/xxDianaPadilla/ISSS-Salud.git'
     },
     {
       id: 'hospital',
@@ -176,7 +176,7 @@ const ProjectsCarousel = () => {
 
                       {/* Links */}
                       <div className="flex gap-3 mt-auto">
-                        {project.githubLink && (
+                        {project.githubLink && project.githubLinkA && project.githubLinkJ && (
                             <a
                           
                             href={project.githubLink}
