@@ -21,7 +21,7 @@ const ProjectsCarousel = () => {
       technologies: ['C#', 'ASP.NET', 'SQL Server 2022', 'Figma', 'QA Testing'],
       type: 'Proyecto Profesional',
       detailsLink: '/proyecto/mopt',
-      githubLink: null // Proyecto confidencial
+      githubLink: null
     },
     {
       id: 'homeclick',
@@ -56,8 +56,6 @@ const ProjectsCarousel = () => {
     }
   ];
 
-  const maxIndex = Math.max(0, projects.length - slidesPerView);
-
   // Responsive slides per view
   useEffect(() => {
     const handleResize = () => {
@@ -76,6 +74,8 @@ const ProjectsCarousel = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const maxIndex = Math.max(0, projects.length - slidesPerView);
+
   // Auto-play functionality
   useEffect(() => {
     if (!isAutoPlaying) return;
@@ -85,7 +85,7 @@ const ProjectsCarousel = () => {
         if (prev >= maxIndex) return 0;
         return prev + 1;
       });
-    }, 3000);
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isAutoPlaying, maxIndex]);
@@ -118,27 +118,31 @@ const ProjectsCarousel = () => {
 
         {/* Carousel Container */}
         <div className="relative max-w-7xl mx-auto">
-          <div className="overflow-hidden">
+          {/* Carousel Wrapper con overflow-hidden correcto */}
+          <div className="overflow-hidden rounded-xl">
+            {/* Carousel Inner */}
             <div 
-              className="flex transition-transform duration-500 ease-in-out gap-6"
-              style={{ transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)` }}
+              className="flex transition-transform duration-700 ease-out"
+              style={{
+                transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)`,
+              }}
             >
               {projects.map((project) => (
                 <div 
                   key={project.id}
-                  className={`min-w-full sm:min-w-[50%] lg:min-w-[33.333%] px-3`}
+                  className={`flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-3`}
                   onMouseEnter={() => setIsAutoPlaying(false)}
                   onMouseLeave={() => setIsAutoPlaying(true)}
+                  style={{ width: `${100 / slidesPerView}%` }}
                 >
-                  <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-[550px] flex flex-col">
-                    
-
-                    {/* Image */}
-                    <div className="h-48 bg-gradient-to-br from-gray-50 to-gray-100 rounded-t-xl flex items-center justify-center p-6">
+                  {/* Card con altura consistente */}
+                  <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col overflow-hidden">
+                    {/* Image Container - Altura fija */}
+                    <div className="h-56 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6 flex-shrink-0">
                       <img 
                         src={project.image} 
                         alt={project.title}
-                        className="max-h-32 max-w-full object-contain"
+                        className="max-h-40 max-w-full object-contain"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.parentElement.innerHTML = `
@@ -153,76 +157,78 @@ const ProjectsCarousel = () => {
                       />
                     </div>
 
-                    {/* Content */}
-                    <div className="flex-1 p-6 flex flex-col">
-                      <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    {/* Content - Crecimiento flexible */}
+                    <div className="flex-1 p-5 sm:p-6 flex flex-col">
+                      <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-2 line-clamp-2">
                         {project.title}
                       </h3>
-                      <p className="text-gray-600 mb-4 flex-1 line-clamp-3">
+                      <p className="text-gray-600 text-sm leading-relaxed mb-4 line-clamp-2 flex-1">
                         {project.description}
                       </p>
 
-                      {/* Technologies */}
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.map((tech) => (
+                      {/* Technologies - Con scroll si es necesario */}
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        {project.technologies.slice(0, 3).map((tech) => (
                           <span
                             key={tech}
-                            className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full hover:bg-blue-600 hover:text-white transition-colors"
+                            className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full hover:bg-blue-600 hover:text-white transition-colors whitespace-nowrap"
                           >
                             {tech}
                           </span>
                         ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-full">
+                            +{project.technologies.length - 3}
+                          </span>
+                        )}
                       </div>
 
-                      {/* Links */}
-                      <div className="flex gap-3 mt-auto">
-                        {project.githubLink &&(
-                            <a
-                          
+                      {/* Links - Siempre en el bottom */}
+                      <div className="flex gap-2 flex-wrap mt-auto">
+                        {project.githubLink && (
+                          <a
                             href={project.githubLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                            className="flex-1 min-w-[120px] px-3 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-1 text-sm"
                           >
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
-                            Repositorio
+                            <span className="hidden sm:inline">Repo</span>
                           </a>
                         )}
-                        {project.githubLinkA &&(
-                            <a
-                          
+                        {project.githubLinkA && (
+                          <a
                             href={project.githubLinkA}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                            className="flex-1 min-w-[120px] px-3 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-1 text-sm"
                           >
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
-                            Repositorio Android
+                            <span className="hidden sm:inline">Android</span>
                           </a>
                         )}
-                        {project.githubLinkJ &&(
-                            <a
-                          
+                        {project.githubLinkJ && (
+                          <a
                             href={project.githubLinkJ}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex-1 px-4 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-2"
+                            className="flex-1 min-w-[120px] px-3 py-2 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors flex items-center justify-center gap-1 text-sm"
                           >
-                            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                               <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                             </svg>
-                            Repositorio Java
+                            <span className="hidden sm:inline">Java</span>
                           </a>
                         )}
                         <Link
                           to={project.detailsLink}
-                          className="flex-1 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-center"
+                          className="flex-1 min-w-[120px] px-3 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors text-center text-sm font-medium"
                         >
-                          Ver Detalles
+                          Detalles
                         </Link>
                       </div>
                     </div>
@@ -232,36 +238,40 @@ const ProjectsCarousel = () => {
             </div>
           </div>
 
-          {/* Controls */}
-          <div className="flex items-center justify-center gap-8 mt-8">
+          {/* Controls - Posicionados abajo */}
+          <div className="flex items-center justify-center gap-6 mt-10">
+            {/* Botón Anterior */}
             <button
               onClick={handlePrevious}
-              className="w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors flex items-center justify-center shadow-lg"
+              className="w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors flex items-center justify-center shadow-lg hover:shadow-xl"
+              aria-label="Proyecto anterior"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
 
-            {/* Indicators */}
+            {/* Indicadores */}
             <div className="flex gap-2">
-              {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+              {Array.from({ length: Math.max(1, maxIndex + 1) }).map((_, index) => (
                 <button
                   key={index}
                   onClick={() => goToSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all ${
+                  className={`transition-all duration-300 ${
                     index === currentIndex
-                      ? 'bg-blue-600 w-8'
-                      : 'bg-gray-400 hover:bg-gray-600'
+                      ? 'bg-blue-600 w-8 h-3 rounded-full'
+                      : 'bg-gray-400 w-3 h-3 rounded-full hover:bg-gray-600'
                   }`}
                   aria-label={`Ir a slide ${index + 1}`}
                 />
               ))}
             </div>
 
+            {/* Botón Siguiente */}
             <button
               onClick={handleNext}
-              className="w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors flex items-center justify-center shadow-lg"
+              className="w-12 h-12 rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors flex items-center justify-center shadow-lg hover:shadow-xl"
+              aria-label="Siguiente proyecto"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
