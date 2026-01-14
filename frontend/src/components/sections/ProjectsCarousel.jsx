@@ -41,7 +41,8 @@ const ProjectsCarousel = () => {
       technologies: ['Java Desktop', 'Kotlin Mobile', 'Oracle DB', 'Android', 'Swing UI'],
       type: 'Proyecto Multiplataforma',
       detailsLink: '/proyecto/isssSalud',
-      githubLink: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git'
+      githubLinkJ: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git',
+      githubLinkA: 'https://github.com/xxDianaPadilla/ISSS-Salud.git',
     },
     {
       id: 'hospital',

@@ -396,8 +396,8 @@ const projectsData = {
     subtitle: 'Sistema Integral de Gestión Hospitalaria Multiplataforma',
     isProfessional: false,
     tags: ['Java Swing', 'Kotlin', 'Oracle DB', 'Android', 'Sistema Integral'],
-    githubLink: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git',
-    githubLink2: 'https://github.com/xxDianaPadilla/ISSS-Salud.git',
+    githubLinkJ: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java.git',
+    githubLinkA: 'https://github.com/xxDianaPadilla/ISSS-Salud.git',
     logo: issLogo,
     gallery: [
       { src: isssInicio, alt: 'Pantalla de inicio aplicación Java', caption: 'Interfaz de inicio del sistema de escritorio' },
