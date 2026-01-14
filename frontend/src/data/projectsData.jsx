@@ -12,18 +12,14 @@ import moptLogo from '../assets/mopt-logo.png';
 import homeclickLogo from '../assets/homeclick-logo.png';
 import issLogo from '../assets/LOGO AZUL.png';
 import bloomLogo from '../assets/bloom salud.png';
-import workfinderLogo from '../assets/Work Finder-1 02 Artboard 4.png';
 
 // Imágenes adicionales - galerías
 import isssInicio from '../assets/ISSS Salud inicio.png';
 import isssInterfaz from '../assets/ISSS Salud Interfaz.png';
 import isssUso from '../assets/ISSS Salud uso.png';
-// import bloomInicio from '../assets/bloom salud inicio.png';
-// import bloomInterfaz from '../assets/bloom salud interfaz.png';
-// import bloomEstadisticas from '../assets/bloom salud estadisticas.png';
-import workfinderInicio from '../assets/WorkFinder Inicio.png';
-import workfinderHome from '../assets/Work Finder Home.png';
-import workfinderOferta from '../assets/Work Finder Oferta.png';
+import bloomInicio from '../assets/bloomInicio.png';
+import bloomInterfaz from '../assets/bloom salud interfaz.png';
+import bloomMedicamentos from '../assets/bloom salud medicamentos.png';
 
 const projectsData = {
   mopt: {
@@ -172,7 +168,7 @@ const projectsData = {
     relatedProjects: [
       { id: 'isssSalud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud', type: 'Proyecto Académico', image: issLogo },
       { id: 'hospitalBloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
-      { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo', type: 'Proyecto de Frontend', image: workfinderLogo }
+      { id: 'homeclick', title: 'HomeClick', description: 'Plataforma inmobiliaria completa', type: 'Proyecto Académico', image: homeclickLogo }
     ]
   },
 
@@ -619,7 +615,7 @@ const projectsData = {
     relatedProjects: [
       { id: 'mopt', title: 'Sistema Interno MOPT', description: 'Proyecto profesional en prácticas con C# y ASP.NET', type: 'Proyecto Profesional', image: moptLogo },
       { id: 'hospitalBloom', title: 'Hospital Bloom', description: 'Sistema de gestión hospitalaria pediátrica', type: 'Proyecto Académico', image: bloomLogo },
-      { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo con diseño moderno', type: 'Proyecto de Frontend', image: workfinderLogo }
+      { id: 'homeclick', title: 'HomeClick', description: 'Plataforma inmobiliaria completa', type: 'Proyecto Académico', image: homeclickLogo }
     ]
   },
 
@@ -632,9 +628,9 @@ const projectsData = {
     githubLink: 'https://github.com/Xx-pocasangre-xX/Hospital-Bloom.git',
     logo: bloomLogo,
     gallery: [
-      // { src: bloomInicio, alt: 'Pantalla de inicio Hospital Bloom', caption: 'SplashScreen con animación Lottie' },
-      // { src: bloomInterfaz, alt: 'Interfaz principal de gestión', caption: 'Dashboard principal con módulos de pacientes' },
-      // { src: bloomEstadisticas, alt: 'Dashboard de estadísticas médicas', caption: 'Vista de estadísticas y reportes' }
+      { src: bloomInicio, alt: 'Pantalla de inicio Hospital Bloom', caption: 'SplashScreen con animación Lottie' },
+      { src: bloomInterfaz, alt: 'Interfaz principal de gestión', caption: 'Dashboard principal con módulos de pacientes' },
+      { src: bloomMedicamentos, alt: 'Dashboard de medicamentos', caption: 'Vista de medicamentos y aplicaciones' }
     ],
 
     description: {
@@ -872,54 +868,7 @@ const projectsData = {
     relatedProjects: [
       { id: 'isssSalud', title: 'ISSS Salud', description: 'Sistema integrado para gestión de salud multiplataforma', type: 'Proyecto Académico', image: issLogo },
       { id: 'homeclick', title: 'HomeClick', description: 'Plataforma inmobiliaria con stack MERN', type: 'Proyecto Full-Stack', image: homeclickLogo },
-      { id: 'workfinder', title: 'WorkFinder', description: 'Plataforma de búsqueda de empleo', type: 'Proyecto Frontend', image: workfinderLogo }
-    ]
-  },
-  workfinder: {
-    title: 'WorkFinder',
-    subtitle: 'Plataforma Web de Búsqueda y Publicación de Ofertas Laborales',
-    isProfessional: false,
-    tags: ['HTML5', 'CSS3', 'JavaScript', 'UI/UX Design', 'Responsive Web'],
-    githubLink: 'https://github.com/Xx-pocasangre-xX/WorkFinder.git',
-    sections: [
-      {
-        title: 'Descripción del Proyecto',
-        content: (
-          <div>
-            <p className="text-gray-700 mb-4">
-              WorkFinder es una plataforma web completa diseñada para facilitar la búsqueda y publicación 
-              de ofertas laborales, desarrollada con tecnologías web fundamentales.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Como responsable principal del diseño e implementación frontend, me enfoqué en crear una 
-              experiencia visual atractiva, funcional y completamente responsiva.
-            </p>
-          </div>
-        )
-      }
-    ],
-    relatedProjects: [
-      {
-        title: 'HomeClick',
-        description: 'Plataforma inmobiliaria completa',
-        type: 'Proyecto Full-Stack',
-        link: '/proyecto/homeclick',
-        image: homeclickLogo
-      },
-      {
-        title: 'ISSS Salud',
-        description: 'Sistema de gestión de salud',
-        type: 'Proyecto Multiplataforma',
-        link: '/proyecto/isssSalud',
-        image: issLogo
-      },
-      {
-        title: 'Hospital Bloom',
-        description: 'App móvil hospitalaria',
-        type: 'Proyecto Android',
-        link: '/proyecto/hospitalBloom',
-        image: bloomLogo
-      }
+      { id: 'mopt', title: 'Sistema Interno MOPT', description: 'Proyecto profesional en prácticas con C# y ASP.NET', type: 'Proyecto Profesional', image: moptLogo }
     ]
   }
 };

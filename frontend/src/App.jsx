@@ -34,7 +34,6 @@ function App() {
         <Route path="/proyecto/homeclick" element={<ProjectDetailsPage projectId="homeclick" />} />
         <Route path="/proyecto/isssSalud" element={<ProjectDetailsPage projectId="isssSalud" />} />
         <Route path="/proyecto/hospitalBloom" element={<ProjectDetailsPage projectId="hospitalBloom" />} />
-        <Route path="/proyecto/workfinder" element={<ProjectDetailsPage projectId="workfinder" />} />
         
         {/* Ruta de fallback */}
         <Route path='*' element={<HomePage />} />
