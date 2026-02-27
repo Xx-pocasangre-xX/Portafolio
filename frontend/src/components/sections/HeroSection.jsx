@@ -20,7 +20,7 @@ const HeroSection = () => {
           </h1>
 
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600 mb-4">
-            Software Developer • Frontend • Mobile • UI/UX
+            Software Developer • Frontend •  UI/UX
           </h2>
 
           <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">
@@ -58,13 +58,13 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Image */}
+        {/* Image - MEJORADO CON ZOOM */}
         <div className="flex-1 flex justify-center items-center">
           <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl hover:scale-105 transition-transform duration-300 bg-gray-300">
             <img
               src={profileImage}
               alt="Ricardo Daniel García Pocasangre"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center scale-125"
             />
           </div>
         </div>

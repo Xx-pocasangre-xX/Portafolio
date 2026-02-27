@@ -1,58 +1,42 @@
 import React from 'react';
+import {
+  GraduationCap,
+  Briefcase,
+  Smartphone,
+  Sparkles,
+  Server,
+  Clock
+} from "lucide-react";
 
 const AboutSection = () => {
   const details = [
     {
-      icon: (
-        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z" />
-        </svg>
-      ),
+      icon: <GraduationCap className="w-10 h-10" />,
       title: "Formación Académica",
       description: "Ingeniería Informática (en curso) | Bachillerato Técnico en Desarrollo de Software"
     },
     {
-      icon: (
-        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2z" />
-        </svg>
-      ),
+      icon: <Briefcase className="w-10 h-10" />,
       title: "Experiencia Profesional",
       description: "Practicante en desarrollo de software (MOPT) con backend, UI/UX y QA testing"
     },
     {
-      icon: (
-        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M2 6a2 2 0 012-2h5l2 2h5a2 2 0 012 2v6a2 2 0 01-2 2H4z" />
-        </svg>
-      ),
+      icon: <Smartphone className="w-10 h-10" />,
       title: "Desarrollo Móvil",
       description: "Android con Kotlin y React Native"
     },
     {
-      icon: (
-        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12z" />
-        </svg>
-      ),
+      icon: <Sparkles className="w-10 h-10" />,
       title: "Especialización",
       description: "Frontend, UI/UX y aplicaciones multiplataforma"
     },
     {
-      icon: (
-        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7z" />
-        </svg>
-      ),
+      icon: <Server className="w-10 h-10" />,
       title: "Backend",
       description: "C#, Java, Node.js, APIs REST y bases de datos SQL/NoSQL"
     },
     {
-      icon: (
-        <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M8 16.5a1.5 1.5 0 11-3 0z" />
-        </svg>
-      ),
+      icon: <Clock className="w-10 h-10" />,
       title: "Disponibilidad",
       description: "Medio tiempo (vespertino) | Licencia y motocicleta propia"
     }
@@ -100,7 +84,7 @@ const AboutSection = () => {
               key={index}
               className="text-center p-6 bg-gray-50 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
-              <div className="text-blue-600 mb-4 flex justify-center">
+              <div className="text-blue-600 mb-4 flex justify-center items-center w-16 h-16 mx-auto bg-blue-50 rounded-xl">
                 {detail.icon}
               </div>
               <h3 className="font-semibold text-gray-800 mb-2 text-lg">

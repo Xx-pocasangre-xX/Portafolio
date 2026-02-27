@@ -1,4 +1,5 @@
 import React from 'react';
+import { Code, Palette, ShieldCheck, Database } from "lucide-react";
 
 const ExperienceSection = () => {
   return (
@@ -29,9 +30,9 @@ const ExperienceSection = () => {
               {/* Achievement 1 */}
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12z" />
-                  </svg>
+                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <Code className="w-6 h-6 text-green-600" />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <h5 className="font-semibold text-gray-800 mb-2">Desarrollo backend y módulos administrativos</h5>
@@ -45,9 +46,9 @@ const ExperienceSection = () => {
               {/* Achievement 2 */}
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12z" />
-                  </svg>
+                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                    <Palette className="w-6 h-6 text-purple-600" />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <h5 className="font-semibold text-gray-800 mb-2">Diseño UI/UX y arquitectura de información</h5>
@@ -61,9 +62,9 @@ const ExperienceSection = () => {
               {/* Achievement 3 */}
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-orange-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M6.267 3.455a3.066 3.066 0 001.745-.723z" />
-                  </svg>
+                  <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
+                    <ShieldCheck className="w-6 h-6 text-orange-600" />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <h5 className="font-semibold text-gray-800 mb-2">QA testing y aseguramiento de calidad</h5>
@@ -77,9 +78,9 @@ const ExperienceSection = () => {
               {/* Achievement 4 */}
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <svg className="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7z" />
-                  </svg>
+                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
+                    <Database className="w-6 h-6 text-blue-600" />
+                  </div>
                 </div>
                 <div className="flex-1">
                   <h5 className="font-semibold text-gray-800 mb-2">Integración y reporting</h5>

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer/Footer';
-import { 
+import {
   ArrowLeft, ExternalLink, Github, CheckCircle, Award
 } from 'lucide-react';
 
@@ -12,7 +12,7 @@ import projectsData from '../data/projectsData.jsx';
 const ProjectDetailsPage = ({ projectId: propProjectId }) => {
   const { projectId: paramProjectId } = useParams();
   const projectId = propProjectId || paramProjectId;
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -30,19 +30,19 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
     );
   }
 
-   return (
+  return (
     <div className="min-h-screen bg-gray-50">
       {/* Header del proyecto */}
       <div className={`${project.isProfessional ? 'bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900' : 'bg-gradient-to-br from-gray-800 via-gray-700 to-gray-900'} text-white`}>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
-          <Link 
-            to="/#projects" 
+          <Link
+            to="/#projects"
             className="inline-flex items-center gap-2 text-blue-200 hover:text-white transition-colors mb-6"
           >
             <ArrowLeft size={20} />
             Volver a Proyectos
           </Link>
-          
+
           {project.headerBadge && (
             <div className="bg-blue-800/50 backdrop-blur-sm rounded-lg px-4 py-2 inline-flex items-center gap-2 mb-6">
               <project.headerBadge.icon size={20} />
@@ -53,14 +53,14 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
           <h1 className="text-4xl lg:text-5xl font-bold mb-4">
             {project.title}
           </h1>
-          
+
           <p className="text-xl text-blue-100 mb-6">
             {project.subtitle}
           </p>
 
           <div className="flex flex-wrap gap-2 mb-8">
             {project.tags.map((tag) => (
-              <span 
+              <span
                 key={tag}
                 className="px-4 py-2 bg-blue-700/50 backdrop-blur-sm rounded-full text-sm font-medium"
               >
@@ -90,7 +90,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                 </span>
               </div>
             )}
-            {project.githubLinkA ? (
+            {project.githubLinkA && (
               <a
                 href={project.githubLinkA}
                 target="_blank"
@@ -100,17 +100,9 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                 <Github size={20} />
                 Repositorio Android
               </a>
-            ) : project.confidentialNotice && (
-              <div className="bg-yellow-900/30 backdrop-blur-sm border border-yellow-700/50 rounded-lg p-4 inline-flex items-center gap-3">
-                <svg className="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <span className="text-yellow-100">
-                  {project.confidentialNotice}
-                </span>
-              </div>
             )}
-            {project.githubLinkJ ? (
+
+            {project.githubLinkJ && (
               <a
                 href={project.githubLinkJ}
                 target="_blank"
@@ -120,15 +112,6 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                 <Github size={20} />
                 Repositorio Java
               </a>
-            ) : project.confidentialNotice && (
-              <div className="bg-yellow-900/30 backdrop-blur-sm border border-yellow-700/50 rounded-lg p-4 inline-flex items-center gap-3">
-                <svg className="w-6 h-6 text-yellow-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                <span className="text-yellow-100">
-                  {project.confidentialNotice}
-                </span>
-              </div>
             )}
           </div>
         </div>
@@ -175,10 +158,10 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
             <div className="grid md:grid-cols-3 gap-6">
               {project.gallery.map((image, index) => (
                 <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
-                  <img 
-                    src={image.src} 
+                  <img
+                    src={image.src}
                     alt={image.alt}
-                    className="w-full h-64 object-cover"
+                    className="w-full h-72 object-contain bg-gray-100"
                   />
                   {image.caption && (
                     <div className="p-4">
@@ -250,7 +233,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
               Stack Tecnológico
             </h2>
             <div className="bg-white rounded-xl shadow-md p-6 lg:p-8">
-              {typeof project.techStack === 'object' && !Array.isArray(project.techStack) ?  (
+              {typeof project.techStack === 'object' && !Array.isArray(project.techStack) ? (
                 // Stack con categorías
                 <div className="space-y-8">
                   {Object.entries(project.techStack).map(([category, techs]) => (
@@ -260,7 +243,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                       </h3>
                       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                         {techs.map((tech, index) => (
-                          <div 
+                          <div
                             key={index}
                             className="p-4 border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all"
                           >
@@ -277,7 +260,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                 // Stack simple
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
                   {project.techStack.map((tech, index) => (
-                    <div 
+                    <div
                       key={index}
                       className="p-4 border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all"
                     >
@@ -468,8 +451,8 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                   className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all hover:-translate-y-1"
                 >
                   <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-6">
-                    <img 
-                      src={relatedProject.image} 
+                    <img
+                      src={relatedProject.image}
                       alt={relatedProject.title}
                       className="max-h-32 max-w-full object-contain"
                     />
@@ -500,15 +483,15 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
               &copy; 2025 Ricardo Daniel García Pocasangre. Todos los derechos reservados.
             </p>
             <div className="flex gap-4">
-              <a 
-                href="https://github.com/Xx-pocasangre-xX" 
-                target="_blank" 
+              <a
+                href="https://github.com/Xx-pocasangre-xX"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
               >
                 <Github size={20} />
               </a>
-              <a 
+              <a
                 href="mailto:danielpocasangre2006@gmail.com"
                 className="text-gray-400 hover:text-white transition-colors"
               >
@@ -517,7 +500,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                 </svg>
               </a>
-              <a 
+              <a
                 href="tel:+50379890503"
                 className="text-gray-400 hover:text-white transition-colors"
               >
