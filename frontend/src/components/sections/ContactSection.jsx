@@ -34,8 +34,8 @@ const ContactSection = () => {
 
     setIsLoading(true);
 
-    // EmailJS setup
-    emailjs.init("_-6CtTYyfKhOOpGcQ");
+    // Inicializar EmailJS con variables de entorno
+    emailjs.init(import.meta.env.EMAILJS_PUBLIC_KEY);
 
     const templateParams = {
       to_name: 'Ricardo Daniel',
@@ -43,11 +43,19 @@ const ContactSection = () => {
       from_name: formData.name,
       reply_to: formData.email,
       message: formData.message,
-      subject: `Nuevo mensaje desde el portafolio de ${formData.name}`
+      subject: `Nuevo mensaje desde el portafolio de ${formData.name}`,
+      // Nuevos campos para mejor formato
+      sender_email: formData.email,
+      message_formatted: formData.message
     };
 
     try {
-      await emailjs.send('service_vk3jt2o', 'template_olte59d', templateParams);
+      await emailjs.send(
+        import.meta.env.EMAILJS_SERVICE_ID,
+        import.meta.env.EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+      
       toast.success('¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.');
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
