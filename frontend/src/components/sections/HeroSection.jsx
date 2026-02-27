@@ -4,7 +4,7 @@ import profileImage from '../../assets/Perfil.png';
 const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Ricardo_Garcia_Pocasangre_Desarrollador_Software_2026.pdf'; // <-- ya no usas rutas relativas
+    link.href = '/Ricardo_Garcia_Pocasangre_Desarrollador_Software_2026.pdf';
     link.download = 'Ricardo_Garcia_Pocasangre_Desarrollador_Software_2026.pdf';
     link.click();
   };
@@ -12,18 +12,22 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-gray-50 to-white pt-20">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between gap-12">
+        
         {/* Content */}
         <div className="flex-1 max-w-2xl text-center lg:text-left">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-2">
             Ricardo Daniel García Pocasangre
           </h1>
+
           <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold text-blue-600 mb-4">
-            Graduado de bachillerato en Desarrollo de Software
+            Software Developer • Frontend • Mobile • UI/UX
           </h2>
+
           <p className="text-base sm:text-lg text-gray-700 mb-8 leading-relaxed">
-            Graduado de bachillerato en Desarrollo de Software con experiencia práctica en desarrollo
-            web, móvil, diseño UI/UX y pruebas de calidad. Especializado en interfaces frontend con sólidos
-            conocimientos en backend y desarrollo multiplataforma.
+            Desarrollador de software y estudiante de Ingeniería Informática con experiencia en desarrollo
+            full-stack, aplicaciones móviles y diseño UI/UX. Impulsor del proyecto ISSS Salud, una solución
+            hospitalaria multiplataforma enfocada en optimizar la gestión médica y la experiencia del usuario.
+            Apasionado por construir productos escalables, eficientes y centrados en las personas.
           </p>
 
           {/* Buttons */}
@@ -34,12 +38,14 @@ const HeroSection = () => {
             >
               Ver Proyectos
             </a>
+
             <a
               href="#contact"
               className="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-lg font-medium hover:bg-gray-800 hover:text-white transform hover:-translate-y-1 transition-all duration-300"
             >
               Contactar
             </a>
+
             <button
               onClick={handleDownloadCV}
               className="px-8 py-3 border-2 border-gray-800 text-gray-800 rounded-lg font-medium hover:bg-gray-800 hover:text-white transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2"
@@ -62,6 +68,7 @@ const HeroSection = () => {
             />
           </div>
         </div>
+
       </div>
     </section>
   );
