@@ -113,26 +113,8 @@ const projectsData = {
           'Metodologías profesionales'
         ]
       }
-    ],
-
-    gallery: [
-      {
-        src: moptLogo,
-        alt: 'Sistema MOPT Interface',
-        caption: 'Sistema administrativo MOPT - Interfaz principal'
-      },
-      {
-        src: moptLogo,
-        alt: 'Dashboard MOPT',
-        caption: 'Dashboard con reportes y estadísticas'
-      },
-      {
-        src: moptLogo,
-        alt: 'Gestión Administrativa',
-        caption: 'Módulo de gestión de solicitudes administrativas'
-      }
-    ],
-
+    ], 
+    
     conclusion: [
       'Mi participación en el Sistema MOPT fue una experiencia invaluable en desarrollo profesional a escala empresarial. Demostré capacidad de trabajar bajo estándares rigurosos de calidad, seguridad y documentación.',
       'El proyecto reforzó mis competencias en desarrollo backend robusto, diseño orientado al usuario en contextos críticos, y aseguramiento de calidad integral. Obtuve experiencia directa en cómo los principios de clean code y arquitectura escalable se aplican en sistemas reales.'
