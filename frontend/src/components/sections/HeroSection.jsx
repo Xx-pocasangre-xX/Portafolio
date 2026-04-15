@@ -5,7 +5,7 @@ const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement('a');
     link.href = '/Ricardo_Garcia_Pocasangre_Desarrollador_Software_2026.pdf';
-    link.download = 'Ricardo_Garcia_Pocasangre_CV.pdf';
+    link.download = 'Ricardo_Garcia_Pocasangre_Desarrollador_Software_2026.pdf';
     link.click();
   };
 
