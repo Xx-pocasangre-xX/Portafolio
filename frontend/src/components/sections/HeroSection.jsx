@@ -4,7 +4,7 @@ import profileImage from '../../assets/Perfil.png';
 const HeroSection = () => {
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Ricardo_Garcia_Pocasangre_CV_2026.pdf';
+    link.href = '/Ricardo_Garcia_Pocasangre_Desarrollador_Software_2026.pdf';
     link.download = 'Ricardo_Garcia_Pocasangre_CV.pdf';
     link.click();
   };
