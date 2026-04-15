@@ -28,7 +28,7 @@ const HeroSection = () => {
 
           <p className="text-lg text-gray-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
             Ingeniero Informático (UCA) con trayectoria en el sector público y privado. 
-            Especializado en transformar requerimientos complejos en aplicaciones móviles y sistemas ERP de alto rendimiento.
+            Especializado en transformar requerimientos complejos en aplicaciones móviles y sistema ERP de alto rendimiento.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

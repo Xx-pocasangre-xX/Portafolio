@@ -54,7 +54,7 @@ const AboutSection = () => {
           <p className="text-gray-700 mb-6 text-lg text-justify leading-relaxed">
             Soy un desarrollador de software apasionado por la creación de soluciones que resuelven problemas reales. 
             Actualmente, formo parte del equipo de desarrollo en **Famolcas S.A. de C.V (Lido)**, donde me especializo 
-            en el ecosistema móvil y la integración de sistemas ERP, transformando requerimientos de negocio en 
+            en el ecosistema móvil y la integración de sistema ERP, transformando requerimientos de negocio en 
             herramientas tecnológicas eficientes.
           </p>
 

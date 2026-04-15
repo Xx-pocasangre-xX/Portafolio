@@ -6,8 +6,8 @@ const ExperienceSection = () => {
     {
       company: "Famolcas S.A. de C.V (Lido)",
       role: "Mobile Developer & ERP Specialist",
-      period: "Enero 2025 - Presente",
-      description: "Lidero el desarrollo de soluciones móviles nativas e integración de sistemas de gestión empresarial.",
+      period: "Marzo 2025 - Presente",
+      description: "Lidero el desarrollo de soluciones móviles nativas e integración de sistema de gestión empresarial.",
       tasks: [
         "Desarrollo de apps móviles en Kotlin bajo arquitectura MVVM.",
         "Arquitectura e integración de módulos ERP utilizando C# y XAF Framework.",
