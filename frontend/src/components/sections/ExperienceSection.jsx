@@ -1,120 +1,79 @@
 import React from 'react';
-import { Code, Palette, ShieldCheck, Database } from "lucide-react";
+import { Briefcase, Calendar, CheckCircle2 } from "lucide-react";
 
 const ExperienceSection = () => {
+  const experiences = [
+    {
+      company: "Famolcas S.A. de C.V (Lido)",
+      role: "Mobile Developer & ERP Specialist",
+      period: "Enero 2025 - Presente",
+      description: "Lidero el desarrollo de soluciones móviles nativas e integración de sistemas de gestión empresarial.",
+      tasks: [
+        "Desarrollo de apps móviles en Kotlin bajo arquitectura MVVM.",
+        "Arquitectura e integración de módulos ERP utilizando C# y XAF Framework.",
+        "Consumo y optimización de servicios Web API REST."
+      ],
+      tags: ["Kotlin", "C#", "XAF", "SQL Server", "Android SDK"]
+    },
+    {
+      company: "Ministerio de Obras Públicas (MOPT)",
+      role: "Software Development Intern",
+      period: "Nov 2024 - Ene 2025",
+      description: "Diseño y desarrollo de sistemas internos gubernamentales de alta criticidad.",
+      tasks: [
+        "Desarrollo backend con C# y ASP.NET para procesos administrativos.",
+        "Prototipado UI/UX en Figma enfocado en la eficiencia del usuario.",
+        "Ejecución de QA Testing y documentación técnica institucional."
+      ],
+      tags: ["ASP.NET", "SQL Server 2022", "Figma", "QA Testing"]
+    }
+  ];
+
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 relative">
-          Experiencia Profesional
-          <span className="block w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></span>
+    <section id="experience" className="py-24 bg-gray-50">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-extrabold text-center mb-16 text-gray-900 tracking-tight">
+          Trayectoria Profesional
+          <span className="block w-24 h-1.5 bg-blue-600 mx-auto mt-4 rounded-full"></span>
         </h2>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-blue-600">
-            <div className="mb-4">
-              <span className="inline-block px-4 py-2 bg-blue-600 text-white rounded-full text-sm font-medium">
-                Nov 2024 - Ene 2025
-              </span>
-            </div>
-
-            <h3 className="text-2xl font-bold text-gray-800 mb-2">
-              Practicante en Desarrollo de Software
-            </h3>
-            <h4 className="text-xl text-gray-600 mb-6">
-              Ministerio de Obras Públicas y Transporte
-            </h4>
-
-            <div className="space-y-6">
-
-              {/* Achievement 1 */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Code className="w-6 h-6 text-green-600" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h5 className="font-semibold text-gray-800 mb-2">Desarrollo backend y módulos administrativos</h5>
-                  <p className="text-gray-600">
-                    Participé en el desarrollo y mejora de módulos administrativos y funcionalidades internas
-                    utilizando C#, ASP.NET y SQL Server 2022, optimizando consultas y procesos de gestión de datos.
+        <div className="max-w-4xl mx-auto space-y-12">
+          {experiences.map((exp, index) => (
+            <div key={index} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+              <div className="flex flex-col md:flex-row justify-between mb-6 gap-4">
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900">{exp.role}</h3>
+                  <p className="text-blue-600 font-semibold flex items-center gap-2 mt-1">
+                    <Briefcase size={18} /> {exp.company}
                   </p>
                 </div>
-              </div>
-
-              {/* Achievement 2 */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
-                    <Palette className="w-6 h-6 text-purple-600" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h5 className="font-semibold text-gray-800 mb-2">Diseño UI/UX y arquitectura de información</h5>
-                  <p className="text-gray-600">
-                    Diseñé wireframes y prototipos en Figma que definieron la arquitectura de información
-                    y la base visual del sistema, mejorando la experiencia del usuario en procesos internos.
-                  </p>
-                </div>
-              </div>
-
-              {/* Achievement 3 */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center">
-                    <ShieldCheck className="w-6 h-6 text-orange-600" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h5 className="font-semibold text-gray-800 mb-2">QA testing y aseguramiento de calidad</h5>
-                  <p className="text-gray-600">
-                    Ejecuté pruebas funcionales, documentación de bugs y validación de funcionalidades críticas,
-                    contribuyendo a la estabilidad y confiabilidad del sistema.
-                  </p>
-                </div>
-              </div>
-
-              {/* Achievement 4 */}
-              <div className="flex items-start space-x-4">
-                <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <div className="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <Database className="w-6 h-6 text-blue-600" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h5 className="font-semibold text-gray-800 mb-2">Integración y reporting</h5>
-                  <p className="text-gray-600">
-                    Colaboré en la integración con sistemas legacy, generación de reportes y despliegue en IIS,
-                    trabajando bajo estándares de seguridad y documentación institucional.
-                  </p>
-                </div>
-              </div>
-
-            </div>
-
-            {/* Technologies */}
-            <div className="mt-6 flex flex-wrap gap-2">
-              {[
-                'C#',
-                'ASP.NET',
-                'SQL Server 2022',
-                'IIS',
-                'Figma',
-                'QA Testing',
-                'Reporting',
-                'Integración legacy'
-              ].map((tech) => (
-                <span
-                  key={tech}
-                  className="px-3 py-1 bg-gray-800 text-white text-sm rounded-full"
-                >
-                  {tech}
+                <span className="bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm font-bold flex items-center gap-2 h-fit">
+                  <Calendar size={16} /> {exp.period}
                 </span>
-              ))}
-            </div>
+              </div>
+              
+              <p className="text-gray-600 mb-6 leading-relaxed italic border-l-4 border-gray-200 pl-4">
+                "{exp.description}"
+              </p>
 
-          </div>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-8">
+                {exp.tasks.map((task, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-700 text-sm">
+                    <CheckCircle2 className="text-blue-500 flex-shrink-0 mt-0.5" size={18} />
+                    {task}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2">
+                {exp.tags.map(tag => (
+                  <span key={tag} className="px-3 py-1 bg-gray-800 text-white text-xs font-bold rounded-md">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

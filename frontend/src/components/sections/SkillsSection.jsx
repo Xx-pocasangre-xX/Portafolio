@@ -24,53 +24,23 @@ const SkillsSection = () => {
 
   const skillCategories = [
     {
-      title: 'Lenguajes de Programación',
-      skills: [
-        { name: 'JavaScript', level: 'Profesional' },
-        { name: 'Kotlin', level: 'Avanzado' },
-        { name: 'Java', level: 'Avanzado' },
-        { name: 'C#', level: 'Avanzado' }
-      ]
-    },
-    {
-      title: 'Frontend & Mobile',
-      skills: [
-        { name: 'React', level: 'Profesional' },
-        { name: 'React Native', level: 'Avanzado' },
-        { name: 'Android (Kotlin)', level: 'Avanzado' },
-        { name: 'Java Swing', level: 'Avanzado' },
-        { name: 'UI/UX Design', level: 'Profesional' }
-      ]
-    },
-    {
-      title: 'Backend & APIs',
-      skills: [
-        { name: 'Node.js', level: 'Avanzado' },
-        { name: 'Express.js', level: 'Avanzado' },
-        { name: 'ASP.NET', level: 'Avanzado' },
-        { name: 'APIs REST', level: 'Profesional' },
-        { name: 'JWT & Autenticación por roles', level: 'Avanzado' },
-        { name: 'Arquitectura MVC', level: 'Profesional' }
-      ]
-    },
-    {
-      title: 'Bases de Datos',
-      skills: [
-        { name: 'SQL Server 2022', level: 'Avanzado' },
-        { name: 'Oracle Database', level: 'Avanzado' },
-        { name: 'MongoDB + Mongoose', level: 'Avanzado' }
-      ]
-    },
-    {
-      title: 'Herramientas & DevOps',
-      skills: [
-        { name: 'Git / GitHub', level: 'Profesional' },
-        { name: 'Figma', level: 'Avanzado' },
-        { name: 'Postman', level: 'Avanzado' },
-        { name: 'IIS', level: 'Intermedio' },
-        { name: 'QA Testing', level: 'Avanzado' }
-      ]
-    }
+    title: 'Desarrollo de Software',
+    skills: [
+      { name: 'Kotlin (Android SDK)', level: 'Profesional' },
+      { name: 'React (MERN Stack)', level: 'Profesional' },
+      { name: 'C# (.NET Framework)', level: 'Avanzado' },
+      { name: 'Java (NetBeans/Android)', level: 'Profesional' }
+    ]
+  },
+  {
+    title: 'Bases de Datos & Tools',
+    skills: [
+      { name: 'Oracle / SQL Server', level: 'Profesional' },
+      { name: 'Git / GitHub', level: 'Avanzado' },
+      { name: 'API REST Integration', level: 'Profesional' },
+      { name: 'Figma (UI/UX)', level: 'Intermedio' }
+    ]
+  }
   ];
 
   const softSkills = [
