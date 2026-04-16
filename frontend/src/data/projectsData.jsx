@@ -128,7 +128,7 @@ const projectsData = {
     isProfessional: false,
     headerBadge: { icon: Home, text: 'Proyecto Académico' },
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'E-Commerce'],
-    githubLink: 'https://github.com/tu-usuario/homeclick',
+    githubLink: 'https://github.com/xxDianaPadilla/homeClick',
     logo: homeclickLogo,
 
     description: {
@@ -249,8 +249,8 @@ const projectsData = {
     isProfessional: false,
     headerBadge: { icon: Stethoscope, text: 'Proyecto Académico Avanzado' },
     tags: ['Java', 'Kotlin', 'Android', 'Oracle Database', 'Desktop App'],
-    githubLink: 'https://github.com/tu-usuario/isss-salud-java',
-    githubLinkA: 'https://github.com/tu-usuario/isss-salud-android',
+    githubLinkJ: 'https://github.com/Xx-pocasangre-xX/ISSS_Salud-Java',
+    githubLinkA: 'https://github.com/xxDianaPadilla/ISSS-Salud',
     logo: issLogo,
 
     description: {
@@ -371,7 +371,7 @@ const projectsData = {
     isProfessional: false,
     headerBadge: { icon: Heart, text: 'Proyecto Académico' },
     tags: ['UI/UX Design', 'Frontend', 'Interfaz Médica', 'Pediatría'],
-    githubLink: null,
+    githubLink: 'https://github.com/Xx-pocasangre-xX/Hospital-Bloom',
     confidentialNotice: 'Proyecto académico - Código enfocado en demostración de UX/UI',
     logo: bloomLogo,
 

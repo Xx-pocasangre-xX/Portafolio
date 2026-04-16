@@ -23,12 +23,13 @@ const HeroSection = () => {
           </h1>
 
           <h2 className="text-xl sm:text-2xl font-semibold text-gray-300 mb-8">
-            Software Developer | Mobile Specialist (Kotlin) & Full-Stack Engineer
+            Software Developer | Mobile Developer (Kotlin) & Full-Stack
           </h2>
 
           <p className="text-lg text-gray-400 mb-10 leading-relaxed max-w-xl mx-auto lg:mx-0">
-            Ingeniero Informático (UCA) con trayectoria en el sector público y privado. 
-            Especializado en transformar requerimientos complejos en aplicaciones móviles y sistema ERP de alto rendimiento.
+            Estudiante de Ingeniería Informática (UCA) con experiencia en el desarrollo de aplicaciones móviles 
+            y sistemas empresariales. Enfocado en construir soluciones eficientes mediante consumo de APIs, 
+            desarrollo en Kotlin y participación en sistemas ERP.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">

@@ -90,18 +90,6 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                 </span>
               </div>
             )}
-            {project.githubLinkA && (
-              <a
-                href={project.githubLinkA}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
-              >
-                <Github size={20} />
-                Repositorio Android
-              </a>
-            )}
-
             {project.githubLinkJ && (
               <a
                 href={project.githubLinkJ}
@@ -111,6 +99,17 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
               >
                 <Github size={20} />
                 Repositorio Java
+              </a>
+            )}
+            {project.githubLinkA && (
+              <a
+                href={project.githubLinkA}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-800 rounded-lg hover:bg-gray-100 transition-colors font-semibold"
+              >
+                <Github size={20} />
+                Repositorio Android
               </a>
             )}
           </div>
