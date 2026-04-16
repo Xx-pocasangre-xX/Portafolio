@@ -13,12 +13,12 @@ const AboutSection = () => {
     {
       icon: <GraduationCap className="w-10 h-10" />,
       title: "Formación Académica",
-      description: "Ingeniería Informática en la UCA | Técnico en Desarrollo de Software (Ricaldone)"
+      description: "Estudiante de Ingeniería Informática (UCA) | Técnico en Desarrollo de Software (Ricaldone)"
     },
     {
       icon: <Briefcase className="w-10 h-10" />,
       title: "Experiencia Actual",
-      description: "Desarrollador Mobile y ERP en Famolcas S.A. de C.V (Lido)"
+      description: "Desarrollador Mobile y ERP en Famolcas S.A. de C.V"
     },
     {
       icon: <Smartphone className="w-10 h-10" />,
@@ -28,7 +28,7 @@ const AboutSection = () => {
     {
       icon: <Sparkles className="w-10 h-10" />,
       title: "Enfoque UI/UX",
-      description: "Diseño de interfaces intuitivas y prototipado avanzado en Figma"
+      description: "Diseño de interfaces intuitivas y prototipado en Figma"
     },
     {
       icon: <Server className="w-10 h-10" />,
@@ -38,7 +38,7 @@ const AboutSection = () => {
     {
       icon: <Zap className="w-10 h-10" />,
       title: "Perfil Profesional",
-      description: "Enfocado en la optimización de procesos y soluciones escalables"
+      description: "Enfocado en optimización de procesos y desarrollo de soluciones escalables"
     }
   ];
 
@@ -52,23 +52,21 @@ const AboutSection = () => {
 
         <div className="max-w-4xl mx-auto mb-16">
           <p className="text-gray-700 mb-6 text-lg text-justify leading-relaxed">
-            Soy un desarrollador de software apasionado por la creación de soluciones que resuelven problemas reales. 
-            Actualmente, formo parte del equipo de desarrollo en **Famolcas S.A. de C.V (Lido)**, donde me especializo 
-            en el ecosistema móvil y la integración de sistema ERP, transformando requerimientos de negocio en 
-            herramientas tecnológicas eficientes.
+            Soy un desarrollador de software enfocado en la creación de soluciones que resuelven problemas reales.
+            Actualmente formo parte de un equipo de desarrollo donde trabajo en aplicaciones móviles y sistemas empresariales,
+            transformando requerimientos de negocio en herramientas tecnológicas eficientes.
           </p>
 
           <p className="text-gray-700 mb-6 text-lg text-justify leading-relaxed">
-            Mi trayectoria incluye la conceptualización de proyectos de impacto social como **ISSS Salud**, 
-            y experiencia técnica en el sector público con el **Ministerio de Obras Públicas (MOPT)**. Estas experiencias 
-            me han permitido dominar tanto el desarrollo frontend como backend, siempre bajo un estándar de 
-            código limpio y una experiencia de usuario excepcional.
+            He participado en el desarrollo de aplicaciones móviles orientadas a mejorar procesos y experiencia de usuario,
+            así como en proyectos dentro del sector público, lo que me ha permitido fortalecer mis habilidades tanto en frontend
+            como backend bajo estándares de código limpio y buenas prácticas.
           </p>
 
           <p className="text-gray-700 text-lg text-justify leading-relaxed">
-            Como estudiante de **Ingeniería Informática en la UCA**, mantengo un aprendizaje continuo en tecnologías 
-            emergentes. Me caracterizo por mi capacidad de adaptación, proactividad y un enfoque riguroso en la 
-            calidad del software, desde la base de datos hasta la interfaz final.
+            Como estudiante de Ingeniería Informática, mantengo un aprendizaje continuo en tecnologías emergentes.
+            Me caracterizo por mi capacidad de adaptación, proactividad y enfoque en la calidad del software,
+            desde la lógica de negocio hasta la experiencia final del usuario.
           </p>
         </div>
 
