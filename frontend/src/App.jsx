@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
-// Importar páginas principales del portafolio
 import HomePage from './pages/HomePage';
 import ProjectDetailsPage from './pages/ProjectDetailsPage';
+import { PageTransition, ScrollToTopButton } from './components/UIUtils';
 
 function App() {
   return (
@@ -24,21 +24,21 @@ function App() {
           },
         }}
       />
-      
-      <Routes>
-        {/* Ruta principal - Portafolio */}
-        <Route path="/" element={<HomePage />} />
-        
-        {/* Rutas de detalles de proyectos */}
-        <Route path="/proyecto/mopt" element={<ProjectDetailsPage projectId="mopt" />} />
-        <Route path="/proyecto/marquesa" element={<ProjectDetailsPage projectId="marquesa" />} />
-        <Route path="/proyecto/homeclick" element={<ProjectDetailsPage projectId="homeclick" />} />
-        <Route path="/proyecto/isssSalud" element={<ProjectDetailsPage projectId="isssSalud" />} />
-        <Route path="/proyecto/hospitalBloom" element={<ProjectDetailsPage projectId="hospitalBloom" />} />
-        
-        {/* Ruta de fallback */}
-        <Route path='*' element={<HomePage />} />
-      </Routes>
+
+      {/* Botón flotante global — visible en todas las páginas */}
+      <ScrollToTopButton />
+
+      <PageTransition>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/proyecto/mopt" element={<ProjectDetailsPage projectId="mopt" />} />
+          <Route path="/proyecto/marquesa" element={<ProjectDetailsPage projectId="marquesa" />} />
+          <Route path="/proyecto/homeclick" element={<ProjectDetailsPage projectId="homeclick" />} />
+          <Route path="/proyecto/isssSalud" element={<ProjectDetailsPage projectId="isssSalud" />} />
+          <Route path="/proyecto/hospitalBloom" element={<ProjectDetailsPage projectId="hospitalBloom" />} />
+          <Route path="*" element={<HomePage />} />
+        </Routes>
+      </PageTransition>
     </Router>
   );
 }

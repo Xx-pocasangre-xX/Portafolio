@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ── Paleta unificada del portafolio ──────────────────────────────────────────
+   Tono base: Slate 900 (#0f172a) — azul-gris profundo, no tan negro
+   Secundario: Slate 800 (#1e293b)
+   Cards/superficies: Slate 800/850
+   Texto principal: Slate 100
+   Texto secundario: Slate 400
+   Acento: Blue 500
+   ──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  --bg-base:       #0f172a;   /* slate-900  — fondo principal */
+  --bg-surface:    #1e293b;   /* slate-800  — cards, panels */
+  --bg-elevated:   #263348;   /* entre 800-700 — hover states */
+  --bg-muted:      #334155;   /* slate-700  — bordes visibles */
+  --text-primary:  #f1f5f9;   /* slate-100 */
+  --text-secondary:#94a3b8;   /* slate-400 */
+  --text-muted:    #64748b;   /* slate-500 */
+  --accent:        #3b82f6;   /* blue-500 */
+  --accent-light:  #60a5fa;   /* blue-400 */
+  --border:        rgba(148,163,184,0.12);
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-base); }
+::-webkit-scrollbar-thumb { background: var(--bg-muted); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* Animaciones blob del hero */
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -20px) scale(1.05); }
+  66%       { transform: translate(-15px, 15px) scale(0.97); }
+}
+.animate-blob { animation: blob 9s infinite; }
+.animation-delay-2000 { animation-delay: 2s; }

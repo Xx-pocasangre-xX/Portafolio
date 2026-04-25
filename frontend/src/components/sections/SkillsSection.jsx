@@ -1,98 +1,132 @@
 import React, { useEffect, useState, useRef } from 'react';
 
+const TECH_SKILLS = [
+  {
+    category: 'Mobile & Android',
+    accentColor: '#a78bfa',
+    borderColor: 'rgba(167,139,250,0.2)',
+    bgFrom: 'rgba(167,139,250,0.06)',
+    skills: [
+      { name: 'Kotlin', level: 95, icon: '🟣', desc: 'Android SDK, MVVM, Coroutines' },
+      { name: 'Android Studio', level: 90, icon: '🤖', desc: 'Jetpack, Material Design' },
+      { name: 'React Native', level: 75, icon: '📱', desc: 'Expo, Navigation, AsyncStorage' },
+      { name: 'Java', level: 85, icon: '☕', desc: 'Desktop (Swing), Android' },
+    ],
+  },
+  {
+    category: 'Frontend & Web',
+    accentColor: '#38bdf8',
+    borderColor: 'rgba(56,189,248,0.2)',
+    bgFrom: 'rgba(56,189,248,0.06)',
+    skills: [
+      { name: 'React', level: 90, icon: '⚛️', desc: 'Hooks, Router, Context API' },
+      { name: 'JavaScript', level: 85, icon: '🟡', desc: 'ES2022+, async/await' },
+      { name: 'Tailwind CSS', level: 88, icon: '🎨', desc: 'Utility-first, responsive' },
+      { name: 'Figma', level: 70, icon: '🖼️', desc: 'UI/UX, prototyping' },
+    ],
+  },
+  {
+    category: 'Backend & Bases de Datos',
+    accentColor: '#34d399',
+    borderColor: 'rgba(52,211,153,0.2)',
+    bgFrom: 'rgba(52,211,153,0.06)',
+    skills: [
+      { name: 'Node.js', level: 85, icon: '🟢', desc: 'Express, REST APIs' },
+      { name: 'C# / .NET', level: 80, icon: '💜', desc: 'ASP.NET, XAF Framework' },
+      { name: 'SQL Server', level: 88, icon: '🗄️', desc: 'T-SQL, índices, reportes' },
+      { name: 'Oracle DB', level: 80, icon: '🔴', desc: 'JDBC, ACID, PL/SQL' },
+      { name: 'MongoDB', level: 78, icon: '🍃', desc: 'Mongoose, aggregations' },
+    ],
+  },
+  {
+    category: 'Herramientas & DevOps',
+    accentColor: '#fb923c',
+    borderColor: 'rgba(251,146,60,0.2)',
+    bgFrom: 'rgba(251,146,60,0.06)',
+    skills: [
+      { name: 'Git / GitHub', level: 88, icon: '🐙', desc: 'Branches, PRs, Actions' },
+      { name: 'Visual Studio', level: 85, icon: '🔵', desc: 'IDE principal .NET' },
+      { name: 'Postman', level: 82, icon: '🚀', desc: 'API testing, collections' },
+      { name: 'Vercel', level: 75, icon: '▲', desc: 'Deploy, serverless' },
+    ],
+  },
+];
+
+const SOFT_SKILLS = [
+  { icon: '🗣️', title: 'Comunicación Técnica', desc: 'Documentación clara y colaboración con equipos multidisciplinarios.' },
+  { icon: '🤝', title: 'Trabajo en Equipo', desc: 'Proyectos académicos, institucionales y full-stack colaborativos.' },
+  { icon: '🧩', title: 'Pensamiento Analítico', desc: 'Resolución estructurada de problemas y optimización de sistemas.' },
+  { icon: '⚡', title: 'Adaptabilidad', desc: 'Rápida curva de aprendizaje en nuevas tecnologías y entornos.' },
+];
+
+const SkillBar = ({ name, level, icon, desc, accentColor, isVisible, delay }) => (
+  <div className="group flex flex-col gap-0.5" style={{ transitionDelay: `${delay}ms` }}>
+    <div className="flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <span className="text-base leading-none">{icon}</span>
+        <span className="text-sm font-semibold text-slate-200">{name}</span>
+      </div>
+      <span className="text-xs font-mono" style={{ color: accentColor }}>{level}%</span>
+    </div>
+    <p className="text-xs text-slate-500 group-hover:text-slate-400 transition-colors mb-2 leading-snug pl-6">
+      {desc}
+    </p>
+    <div className="h-1.5 rounded-full overflow-hidden" style={{ background: 'rgba(148,163,184,0.08)' }}>
+      <div
+        className="h-full rounded-full transition-all duration-1000 ease-out"
+        style={{
+          width: isVisible ? `${level}%` : '0%',
+          background: `linear-gradient(90deg, ${accentColor}99, ${accentColor})`,
+          transitionDelay: `${delay}ms`,
+        }}
+      />
+    </div>
+  </div>
+);
+
 const SkillsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setIsVisible(true);
-      },
-      { threshold: 0.3 }
+      ([entry]) => { if (entry.isIntersecting) setIsVisible(true); },
+      { threshold: 0.1 }
     );
-
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
   }, []);
 
-  const skillLevelWidths = {
-    'Intermedio': 50,
-    'Avanzado': 75,
-    'Profesional': 100
-  };
-
-  const skillCategories = [
-    {
-    title: 'Desarrollo de Software',
-    skills: [
-      { name: 'Kotlin (Android SDK)', level: 'Profesional' },
-      { name: 'React (MERN Stack)', level: 'Profesional' },
-      { name: 'C# (.NET Framework)', level: 'Avanzado' },
-      { name: 'Java (NetBeans/Android)', level: 'Profesional' }
-    ]
-  },
-  {
-    title: 'Bases de Datos & Tools',
-    skills: [
-      { name: 'Oracle / SQL Server', level: 'Profesional' },
-      { name: 'Git / GitHub', level: 'Avanzado' },
-      { name: 'API REST Integration', level: 'Profesional' },
-      { name: 'Figma (UI/UX)', level: 'Intermedio' }
-    ]
-  }
-  ];
-
-  const softSkills = [
-    {
-      title: 'Comunicación Técnica',
-      description: 'Capacidad para documentar, explicar soluciones y colaborar con equipos multidisciplinarios.'
-    },
-    {
-      title: 'Trabajo en Equipo',
-      description: 'Experiencia en proyectos académicos, institucionales y full-stack colaborativos.'
-    },
-    {
-      title: 'Pensamiento Analítico',
-      description: 'Resolución estructurada de problemas, optimización de consultas y diseño de arquitectura.'
-    },
-    {
-      title: 'Adaptabilidad',
-      description: 'Experiencia trabajando en entornos gubernamentales con estándares de seguridad y documentación.'
-    }
-  ];
-
   return (
-    <section id="skills" ref={sectionRef} className="py-20 bg-white">
+    <section id="skills" ref={sectionRef} className="py-24" style={{ background: '#0f172a' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-800 relative">
-          Stack Técnico
-          <span className="block w-20 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></span>
-        </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-          {skillCategories.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="bg-gray-50 rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-gray-800 mb-6 pb-2 border-b-2 border-blue-600">
-                {category.title}
+        <h2 className="text-4xl font-extrabold text-center mb-3 text-slate-100 tracking-tight">
+          Stack Técnico
+        </h2>
+        <p className="text-slate-400 text-center mb-16 max-w-xl mx-auto">
+          Tecnologías con las que construyo soluciones reales a diario
+        </p>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-16">
+          {TECH_SKILLS.map((cat, ci) => (
+            <div
+              key={ci}
+              className="rounded-2xl p-6 border transition-all duration-300 hover:border-opacity-60"
+              style={{ background: cat.bgFrom, borderColor: cat.borderColor }}
+            >
+              <h3 className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: cat.accentColor }}>
+                {cat.category}
               </h3>
               <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex}>
-                    <div className="flex justify-between mb-1">
-                      <span className="text-gray-700 font-medium">{skill.name}</span>
-                      <span className="text-blue-600 font-semibold">{skill.level}</span>
-                    </div>
-                    <div className="h-3 bg-gray-200 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full transition-all duration-1000 ease-out"
-                        style={{
-                          width: isVisible ? `${skillLevelWidths[skill.level]}%` : '0%',
-                          transitionDelay: `${(categoryIndex * 200) + (skillIndex * 100)}ms`
-                        }}
-                      />
-                    </div>
-                  </div>
+                {cat.skills.map((skill, si) => (
+                  <SkillBar
+                    key={si}
+                    {...skill}
+                    accentColor={cat.accentColor}
+                    isVisible={isVisible}
+                    delay={ci * 80 + si * 60}
+                  />
                 ))}
               </div>
             </div>
@@ -100,24 +134,21 @@ const SkillsSection = () => {
         </div>
 
         {/* Soft Skills */}
-        <div className="mt-20">
-          <h3 className="text-2xl font-semibold text-center text-gray-800 mb-10">
+        <div>
+          <h3 className="text-2xl font-bold text-center text-slate-100 mb-10">
             Habilidades Profesionales
-            <span className="block w-16 h-1 bg-blue-600 mx-auto mt-3 rounded-full"></span>
+            <span className="block w-12 h-1 bg-blue-500 mx-auto mt-3 rounded-full" />
           </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {softSkills.map((skill, index) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {SOFT_SKILLS.map((s, i) => (
               <div
-                key={index}
-                className="text-center p-6 bg-gray-50 rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
+                key={i}
+                className="rounded-2xl p-6 border text-center hover:-translate-y-1 transition-all duration-300 group"
+                style={{ background: '#1e293b', borderColor: 'rgba(148,163,184,0.1)' }}
               >
-                <h4 className="font-semibold text-gray-800 mb-3">
-                  {skill.title}
-                </h4>
-                <p className="text-gray-600 text-sm">
-                  {skill.description}
-                </p>
+                <div className="text-3xl mb-3">{s.icon}</div>
+                <h4 className="font-bold text-slate-200 mb-2 text-sm">{s.title}</h4>
+                <p className="text-slate-500 text-xs leading-relaxed group-hover:text-slate-400 transition-colors">{s.desc}</p>
               </div>
             ))}
           </div>

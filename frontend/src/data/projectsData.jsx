@@ -12,6 +12,7 @@ import moptLogo from '../assets/mopt-logo.png';
 import homeclickLogo from '../assets/homeclick-logo.png';
 import issLogo from '../assets/LOGO AZUL.png';
 import bloomLogo from '../assets/bloom salud.png';
+import marquesaLogo from '../assets/logo_marquesa.png';
 
 // Imágenes adicionales - galerías
 import isssInicio from '../assets/ISSS Salud inicio.png';
@@ -20,6 +21,16 @@ import isssUso from '../assets/ISSS Salud uso.png';
 import bloomInicio from '../assets/bloomInicio.png';
 import bloomInterfaz from '../assets/bloom salud interfaz.png';
 import bloomMedicamentos from '../assets/bloom salud medicamentos.png';
+
+// Imágenes Marquesa
+import marquesaLogin from '../assets/login marquesa.png';
+import marquesaChat from '../assets/chat admin marquesa.png';
+import marquesaHome from '../assets/Home telefono marquesa.png';
+
+// Imágenes HomeClick
+import homeclickInicio from '../assets/Inicio HomeClick.png';
+import homeclickLogin from '../assets/login HomeClick.png';
+import homeclickcatalogo from "../assets/catalogo de las casas.png"
 
 const projectsData = {
   mopt: {
@@ -132,7 +143,8 @@ const projectsData = {
     headerBadge: { icon: Package, text: 'Proyecto Académico - Emprendimiento Real' },
     tags: ['React', 'Node.js', 'Express', 'MongoDB', 'React Native', 'Expo'],
     githubLink: 'https://github.com/xxDianaPadilla/Marquesa',
-    logo: null,
+    // logo usado en el carousel
+    logo: marquesaLogo,
 
     description: {
       intro: [
@@ -218,6 +230,25 @@ const projectsData = {
           'Correos automáticos con Nodemailer',
           'Estructura de proyecto MERN escalable y modular'
         ]
+      }
+    ],
+
+    // Galería con imágenes reales de Marquesa
+    gallery: [
+      {
+        src: marquesaLogin,
+        alt: 'Marquesa - Pantalla de Login',
+        caption: 'Pantalla de inicio de sesión de la app móvil Marquesa'
+      },
+      {
+        src: marquesaHome,
+        alt: 'Marquesa - Home Móvil',
+        caption: 'Vista principal de la aplicación móvil'
+      },
+      {
+        src: marquesaChat,
+        alt: 'Marquesa - Panel Admin Chat',
+        caption: 'Panel administrativo con gestión de mensajes y atención al cliente'
       }
     ],
 
@@ -324,21 +355,22 @@ const projectsData = {
       }
     ],
 
+    // Galería con imágenes reales de HomeClick
     gallery: [
       {
-        src: homeclickLogo,
-        alt: 'HomeClick Catálogo',
-        caption: 'Catálogo de propiedades con búsqueda y filtros avanzados'
+        src: homeclickInicio,
+        alt: 'HomeClick - Pantalla de Inicio',
+        caption: 'Vista principal con catálogo de propiedades y búsqueda'
       },
       {
-        src: homeclickLogo,
-        alt: 'HomeClick Detalle',
-        caption: 'Vista de detalle de propiedad con mapas y información completa'
+        src: homeclickLogin,
+        alt: 'HomeClick - Login',
+        caption: 'Pantalla de inicio de sesión con autenticación JWT'
       },
       {
-        src: homeclickLogo,
-        alt: 'HomeClick Panel Admin',
-        caption: 'Panel administrativo para gestión de propiedades'
+        src: homeclickcatalogo,
+        alt: 'HomeClick - catalogo',
+        caption: 'Catalogo de las mejores casas de HomeClick'
       }
     ],
 
