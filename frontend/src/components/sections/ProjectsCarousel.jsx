@@ -24,6 +24,16 @@ const ProjectsCarousel = () => {
       githubLink: null
     },
     {
+      id: 'marquesa',
+      title: 'Marquesa - Tienda de Regalos',
+      description: 'Plataforma e-commerce completa para tienda de regalos personalizados con arreglos florales, gift boxes y tarjetas. Web + App móvil sobre stack MERN.',
+      image: null,
+      technologies: ['React', 'Node.js', 'MongoDB', 'React Native', 'Expo'],
+      type: 'Proyecto Full-Stack',
+      detailsLink: '/proyecto/marquesa',
+      githubLink: 'https://github.com/xxDianaPadilla/Marquesa'
+    },
+    {
       id: 'homeclick',
       title: 'HomeClick - Plataforma Inmobiliaria',
       description: 'Plataforma completa de comercio electrónico inmobiliario con stack MERN.',
@@ -108,6 +118,38 @@ const ProjectsCarousel = () => {
     setTimeout(() => setIsAutoPlaying(true), 5000);
   };
 
+  // Componente de imagen con fallback para Marquesa
+  const ProjectImage = ({ project }) => {
+    if (project.id === 'marquesa' || !project.image) {
+      return (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-rose-50 to-pink-100">
+          <div className="text-5xl mb-3">🌸</div>
+          <span className="text-rose-400 font-semibold text-sm tracking-wide">Marquesa</span>
+          <span className="text-rose-300 text-xs mt-1">Tienda de Regalos</span>
+        </div>
+      );
+    }
+
+    return (
+      <img
+        src={project.image}
+        alt={project.title}
+        className="max-h-40 max-w-full object-contain"
+        onError={(e) => {
+          e.target.style.display = 'none';
+          e.target.parentElement.innerHTML = `
+            <div class="text-center text-gray-500">
+              <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+              </svg>
+              ${project.title}
+            </div>
+          `;
+        }}
+      />
+    );
+  };
+
   return (
     <section id="projects" className="py-20 bg-gray-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,22 +181,7 @@ const ProjectsCarousel = () => {
                   <div className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col overflow-hidden">
                     {/* Image Container - Altura fija */}
                     <div className="h-56 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-6 flex-shrink-0">
-                      <img 
-                        src={project.image} 
-                        alt={project.title}
-                        className="max-h-40 max-w-full object-contain"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.parentElement.innerHTML = `
-                            <div class="text-center text-gray-500">
-                              <svg class="w-16 h-16 mx-auto mb-2" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM6.293 6.707a1 1 0 010-1.414l3-3a1 1 0 011.414 0l3 3a1 1 0 01-1.414 1.414L11 5.414V13a1 1 0 11-2 0V5.414L7.707 6.707a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                              </svg>
-                              ${project.title}
-                            </div>
-                          `;
-                        }}
-                      />
+                      <ProjectImage project={project} />
                     </div>
 
                     {/* Content - Crecimiento flexible */}

@@ -31,6 +31,7 @@ function App() {
         
         {/* Rutas de detalles de proyectos */}
         <Route path="/proyecto/mopt" element={<ProjectDetailsPage projectId="mopt" />} />
+        <Route path="/proyecto/marquesa" element={<ProjectDetailsPage projectId="marquesa" />} />
         <Route path="/proyecto/homeclick" element={<ProjectDetailsPage projectId="homeclick" />} />
         <Route path="/proyecto/isssSalud" element={<ProjectDetailsPage projectId="isssSalud" />} />
         <Route path="/proyecto/hospitalBloom" element={<ProjectDetailsPage projectId="hospitalBloom" />} />

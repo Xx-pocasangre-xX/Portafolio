@@ -121,6 +121,112 @@ const projectsData = {
     ]
   },
 
+  // ─────────────────────────────────────────────────────────────
+  //  MARQUESA - Tienda de Regalos
+  // ─────────────────────────────────────────────────────────────
+  marquesa: {
+    id: 'marquesa',
+    title: 'Marquesa',
+    subtitle: 'Tienda de Regalos Personalizados | MERN Stack + React Native/Expo',
+    isProfessional: false,
+    headerBadge: { icon: Package, text: 'Proyecto Académico - Emprendimiento Real' },
+    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'React Native', 'Expo'],
+    githubLink: 'https://github.com/xxDianaPadilla/Marquesa',
+    logo: null,
+
+    description: {
+      intro: [
+        'Marquesa es una plataforma e-commerce completa para una tienda de regalos personalizados, desarrollada sobre arquitectura MERN con una aplicación móvil adicional en React Native/Expo. El proyecto digitaliza un emprendimiento real dedicado a arreglos florales, gift boxes, cuadros decorativos y tarjetas personalizadas.',
+        'Participé en el desarrollo full-stack abarcando desde la API REST en Node.js/Express hasta la interfaz web en React y la app móvil en Expo. El sistema incluye personalización de productos, agendamiento de entregas, rastreo de pedidos, galería, reseñas, blog y un panel administrativo con estadísticas del negocio.'
+      ],
+      context: [
+        { icon: Package, title: 'Tipo', description: 'E-commerce para emprendimiento real' },
+        { icon: Layers, title: 'Plataformas', description: 'Web (React) + Móvil (React Native/Expo)' },
+        { icon: Users, title: 'Equipo', description: '5 estudiantes, Instituto Técnico Ricaldone' }
+      ]
+    },
+
+    techStack: [
+      { icon: '⚛️', name: 'React.js', description: 'Interfaz web dinámica con componentes reutilizables' },
+      { icon: '📱', name: 'React Native + Expo', description: 'App móvil multiplataforma iOS/Android' },
+      { icon: '🟢', name: 'Node.js', description: 'Runtime backend del servidor' },
+      { icon: '🚂', name: 'Express.js', description: 'API RESTful y gestión de rutas HTTP' },
+      { icon: '🍃', name: 'MongoDB', description: 'Base de datos NoSQL para productos y pedidos' },
+      { icon: '🔐', name: 'JWT + bcryptjs', description: 'Autenticación segura y cifrado de contraseñas' },
+      { icon: '☁️', name: 'Cloudinary', description: 'Almacenamiento y gestión de imágenes en la nube' },
+      { icon: '📧', name: 'Nodemailer', description: 'Notificaciones y correos electrónicos automáticos' }
+    ],
+
+    challenges: [
+      {
+        title: 'Personalización Dinámica de Productos',
+        problem: 'Los clientes necesitan configurar múltiples atributos por producto (estilo, papel, colores, dedicatorias, presentación) con precios que varían según selección, manteniendo la lógica consistente entre la app web y la móvil.',
+        solution: 'Diseñé un esquema flexible en MongoDB para opciones de personalización y un componente configurador reutilizable en React/React Native que refleja cambios en tiempo real con cálculo dinámico de precio.'
+      },
+      {
+        title: 'Sincronización Web y Móvil',
+        problem: 'Mantener paridad funcional entre la app web y la móvil compartiendo la misma API, con flujos de usuario adaptados a cada plataforma sin duplicar lógica de negocio.',
+        solution: 'Centralicé toda la lógica en la API REST de Express. Tanto React como React Native consumen los mismos endpoints, con adaptaciones de UI específicas por plataforma usando componentes nativos de Expo.'
+      },
+      {
+        title: 'Agendamiento con Validación de Anticipación',
+        problem: 'El flujo de compra requiere agendar fecha de entrega con mínimo 3 días de anticipación, validando disponibilidad en tiempo real y enviando confirmaciones automáticas al cliente.',
+        solution: 'Implementé validaciones de fecha en el backend con Express, integré un DateTimePicker nativo en ambas plataformas y automaticé el envío de correos de confirmación con Nodemailer al confirmar cada pedido.'
+      }
+    ],
+
+    impact: {
+      metrics: [
+        { icon: Globe, title: 'Digitalización', description: 'Emprendimiento físico llevado completamente a digital' },
+        { icon: Smartphone, title: 'Multiplataforma', description: 'Web + app móvil con experiencia unificada' },
+        { icon: Zap, title: 'Automatización', description: 'Pedidos, notificaciones y seguimiento automatizados' },
+        { icon: TrendingUp, title: 'Escalabilidad', description: 'Arquitectura lista para el crecimiento del negocio' }
+      ],
+      description: 'Marquesa representa la digitalización completa de un emprendimiento real, demostrando capacidad de llevar una solución desde cero hasta producción. El proyecto integra e-commerce moderno con personalización avanzada, gestión de inventario y experiencia de usuario consistente en dos plataformas. Es prueba concreta de trabajo en equipo bajo metodologías reales de desarrollo de software.'
+    },
+
+    learnings: [
+      {
+        icon: '📱',
+        title: 'Desarrollo Móvil con Expo',
+        items: [
+          'React Native con arquitectura de navegación compleja',
+          'Componentes nativos: DateTimePicker, AsyncStorage, Slider',
+          'Tipografías y splash screens personalizados con Expo',
+          'Efectos visuales nativos con Expo Blur',
+          'Navegación por tabs y stacks con React Navigation'
+        ]
+      },
+      {
+        icon: '🛒',
+        title: 'E-Commerce Completo',
+        items: [
+          'Flujos de compra y personalización de productos',
+          'Métodos de pago: efectivo, transferencia, crédito y débito',
+          'Sistema de rastreo y estados de pedidos',
+          'Panel administrativo con estadísticas del negocio',
+          'Galería, reseñas de clientes y blog integrados'
+        ]
+      },
+      {
+        icon: '☁️',
+        title: 'Infraestructura Cloud',
+        items: [
+          'Gestión de imágenes con Cloudinary y Multer',
+          'Variables de entorno y configuración segura con dotenv',
+          'Tokens seguros con crypto y JWT',
+          'Correos automáticos con Nodemailer',
+          'Estructura de proyecto MERN escalable y modular'
+        ]
+      }
+    ],
+
+    conclusion: [
+      'Marquesa es un proyecto que trasciende lo académico al resolver necesidades reales de un emprendimiento en crecimiento. La combinación de plataforma web y app móvil sobre la misma API demuestra dominio integral del stack MERN y capacidad de desarrollo multiplataforma.',
+      'El proyecto fortaleció mis habilidades de trabajo en equipo, gestión de un sistema con múltiples capas de complejidad y entrega de valor real a un cliente. La experiencia de colaborar entre cinco desarrolladores con roles de frontend y backend complementarios fue clave para mi crecimiento profesional.'
+    ]
+  },
+
   homeclick: {
     id: 'homeclick',
     title: 'HomeClick',
