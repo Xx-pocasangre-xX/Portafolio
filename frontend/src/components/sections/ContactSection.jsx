@@ -118,7 +118,7 @@ const ContactSection = () => {
       ),
       title: 'LinkedIn',
       value: 'linkedin.com/in/ricardo-garcía-pocasangre',
-      href:  'https://linkedin.com/in/ricardo-garcía-pocasangre',
+      href:  'https://www.linkedin.com/in/ricardo-daniel-garcia-pocasangre-2b780b316/',
     },
   ];
 
