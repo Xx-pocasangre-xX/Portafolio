@@ -10,8 +10,64 @@ import projectsData from '../data/projectsData.jsx';
 
 // ─── Tema visual por proyecto ─────────────────────────────────────────────────
 const PROJECT_THEMES = {
+  // Proyectos profesionales Famolcas — azul corporativo
+  erp: {
+    gradient: 'from-[#03091a] via-[#071733] to-[#03091a]',
+    accentHex: '#60a5fa',
+    glowColor: 'rgba(96,165,250,0.2)',
+    badgeBg: 'bg-blue-900/60',
+    badgeText: 'text-blue-200',
+    badgeBorder: 'border-blue-700/50',
+    tagBg: 'bg-blue-800/40',
+    repoBtnClass: 'bg-blue-600 hover:bg-blue-500 text-white',
+    underlineClass: 'bg-blue-400',
+    subtitleClass: 'text-blue-200',
+    logoBgColor: '#e8e8e8',
+    logoBorderColor: 'rgba(96,165,250,0.2)',
+  },
+  appPunteo: {
+    gradient: 'from-[#03091a] via-[#071733] to-[#03091a]',
+    accentHex: '#60a5fa',
+    glowColor: 'rgba(96,165,250,0.2)',
+    badgeBg: 'bg-blue-900/60',
+    badgeText: 'text-blue-200',
+    badgeBorder: 'border-blue-700/50',
+    tagBg: 'bg-blue-800/40',
+    repoBtnClass: 'bg-blue-600 hover:bg-blue-500 text-white',
+    underlineClass: 'bg-blue-400',
+    subtitleClass: 'text-blue-200',
+    logoBgColor: '#e8e8e8',
+    logoBorderColor: 'rgba(96,165,250,0.2)',
+  },
+  appVentas: {
+    gradient: 'from-[#03091a] via-[#071733] to-[#03091a]',
+    accentHex: '#60a5fa',
+    glowColor: 'rgba(96,165,250,0.2)',
+    badgeBg: 'bg-blue-900/60',
+    badgeText: 'text-blue-200',
+    badgeBorder: 'border-blue-700/50',
+    tagBg: 'bg-blue-800/40',
+    repoBtnClass: 'bg-blue-600 hover:bg-blue-500 text-white',
+    underlineClass: 'bg-blue-400',
+    subtitleClass: 'text-blue-200',
+    logoBgColor: '#e8e8e8',
+    logoBorderColor: 'rgba(96,165,250,0.2)',
+  },
+  erpapi: {
+    gradient: 'from-[#03091a] via-[#071733] to-[#03091a]',
+    accentHex: '#60a5fa',
+    glowColor: 'rgba(96,165,250,0.2)',
+    badgeBg: 'bg-blue-900/60',
+    badgeText: 'text-blue-200',
+    badgeBorder: 'border-blue-700/50',
+    tagBg: 'bg-blue-800/40',
+    repoBtnClass: 'bg-blue-600 hover:bg-blue-500 text-white',
+    underlineClass: 'bg-blue-400',
+    subtitleClass: 'text-blue-200',
+    logoBgColor: '#e8e8e8',
+    logoBorderColor: 'rgba(96,165,250,0.2)',
+  },
   mopt: {
-    // Amarillo institucional — vibrante
     gradient: 'from-[#1a1400] via-[#2e2200] to-[#1a1400]',
     accentHex: '#facc15',
     glowColor: 'rgba(250,204,21,0.25)',
@@ -22,7 +78,6 @@ const PROJECT_THEMES = {
     repoBtnClass: 'bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-bold',
     underlineClass: 'bg-yellow-400',
     subtitleClass: 'text-yellow-200',
-    // Caja del logo: gris suave cálido que armoniza con el amarillo
     logoBgColor: '#e8e8e8',
     logoBorderColor: 'rgba(250,204,21,0.25)',
   },
@@ -196,26 +251,14 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
 
-      {/* ═══════════════════════════════════════════════════
-          BANNER — El navbar tiene h≈80px. Usamos pt-32
-          para dar aire real entre navbar y contenido.
-          La franja de "fade" cubre los primeros 80px del
-          banner haciendo que el corte se disuelva.
-      ═══════════════════════════════════════════════════ */}
       <div
         className={`bg-gradient-to-br ${theme.gradient} text-white relative overflow-hidden`}
         style={{ paddingTop: '7rem', paddingBottom: '5rem' }}
       >
-        {/* Fade que difumina el borde superior del banner
-            para que el navbar no se sienta "cortado" */}
         <div
           className="absolute top-0 left-0 right-0 h-28 pointer-events-none z-20"
-          style={{
-            background: `linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 100%)`,
-          }}
+          style={{ background: `linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 100%)` }}
         />
-
-        {/* Glow de acento */}
         <div
           className="absolute right-0 top-0 w-2/3 h-full opacity-100 pointer-events-none"
           style={{ background: `radial-gradient(ellipse at 85% 40%, ${theme.glowColor}, transparent 65%)` }}
@@ -223,7 +266,6 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
-          {/* ── Fila: Volver | Badge centrado | Espaciador ── */}
           <div className="relative flex items-center justify-between mb-10">
             <Link
               to="/#projects"
@@ -234,11 +276,8 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
               <span className="sm:hidden">Volver</span>
             </Link>
 
-            {/* Badge centrado */}
             {project.headerBadge && (
-              <div
-                className={`absolute left-1/2 -translate-x-1/2 flex items-center gap-2 px-5 py-2 rounded-full backdrop-blur-sm ${theme.badgeBg} border ${theme.badgeBorder}`}
-              >
+              <div className={`absolute left-1/2 -translate-x-1/2 flex items-center gap-2 px-5 py-2 rounded-full backdrop-blur-sm ${theme.badgeBg} border ${theme.badgeBorder}`}>
                 <project.headerBadge.icon size={15} className={theme.badgeText} />
                 <span className={`${theme.badgeText} text-sm font-semibold whitespace-nowrap`}>
                   {project.headerBadge.text}
@@ -246,44 +285,27 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
               </div>
             )}
 
-            {/* Espaciador para equilibrar el flex */}
             <div className="w-32 sm:w-40 invisible" aria-hidden="true" />
           </div>
 
-          {/* ── Cuerpo: Título/info + Logo ── */}
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
-
-            {/* Texto izquierda */}
             <div className="flex-1 min-w-0">
-              <h1 className="text-5xl lg:text-6xl font-extrabold mb-3 leading-tight">
-                {project.title}
-              </h1>
-
+              <h1 className="text-5xl lg:text-6xl font-extrabold mb-3 leading-tight">{project.title}</h1>
               <div className={`w-20 h-1.5 rounded-full mb-5 ${theme.underlineClass}`} />
-
               <p className={`text-lg mb-6 ${theme.subtitleClass}`}>{project.subtitle}</p>
 
-              {/* Tags */}
               <div className="flex flex-wrap gap-2 mb-8">
                 {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className={`px-3 py-1.5 ${theme.tagBg} backdrop-blur-sm rounded-full text-sm font-medium text-white/90 border border-white/10`}
-                  >
+                  <span key={tag} className={`px-3 py-1.5 ${theme.tagBg} backdrop-blur-sm rounded-full text-sm font-medium text-white/90 border border-white/10`}>
                     {tag}
                   </span>
                 ))}
               </div>
 
-              {/* Botones */}
               <div className="flex flex-wrap gap-3">
                 {project.githubLink && (
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl transition-colors shadow-lg ${theme.repoBtnClass}`}
-                  >
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl transition-colors shadow-lg ${theme.repoBtnClass}`}>
                     <Github size={18} /> Ver Repositorio
                   </a>
                 )}
@@ -296,29 +318,20 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                   </div>
                 )}
                 {project.githubLinkJ && (
-                  <a
-                    href={project.githubLinkJ}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl transition-colors shadow-lg ${theme.repoBtnClass}`}
-                  >
+                  <a href={project.githubLinkJ} target="_blank" rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl transition-colors shadow-lg ${theme.repoBtnClass}`}>
                     <Github size={18} /> Repositorio Java
                   </a>
                 )}
                 {project.githubLinkA && (
-                  <a
-                    href={project.githubLinkA}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-semibold transition-colors"
-                  >
+                  <a href={project.githubLinkA} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white border border-white/20 rounded-xl font-semibold transition-colors">
                     <Github size={18} /> Repositorio Android
                   </a>
                 )}
               </div>
             </div>
 
-            {/* Logo — caja gris suave (tono oscuro del color del proyecto, no blanco) */}
             {project.logo && (
               <div className="flex-shrink-0 flex justify-center lg:justify-end">
                 <div
@@ -329,11 +342,7 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
                     boxShadow: `0 30px 60px -10px rgba(0,0,0,0.5), 0 0 40px -5px ${theme.glowColor}`,
                   }}
                 >
-                  <img
-                    src={project.logo}
-                    alt={`${project.title} logo`}
-                    className="w-full h-full object-contain"
-                  />
+                  <img src={project.logo} alt={`${project.title} logo`} className="w-full h-full object-contain" />
                 </div>
               </div>
             )}
@@ -341,9 +350,6 @@ const ProjectDetailsPage = ({ projectId: propProjectId }) => {
         </div>
       </div>
 
-      {/* ═══════════════════════════════════
-          CONTENIDO
-      ═══════════════════════════════════ */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
 
         <CollapsibleSection title="Descripción del Proyecto" defaultOpen={true}>

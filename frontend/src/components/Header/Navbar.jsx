@@ -4,11 +4,26 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const location = useLocation();
   const isProjectPage = location.pathname.startsWith('/proyecto/');
 
+  // ── Scroll: fondo + sección activa ──────────────────────────────────────────
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 20);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+
+      // Detectar sección activa por IntersectionObserver equivalente con scroll
+      const sectionIds = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+      const offsets = sectionIds.map(id => {
+        const el = document.getElementById(id);
+        if (!el) return { id, top: Infinity };
+        return { id, top: Math.abs(el.getBoundingClientRect().top - 100) };
+      });
+      const closest = offsets.reduce((a, b) => (a.top < b.top ? a : b));
+      setActiveSection(closest.id);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
@@ -23,11 +38,8 @@ const Navbar = () => {
     }
   };
 
-  // Fondo: en proyecto → transparente→oscuro; en home → siempre slate semi-opaco
   const navBg = isProjectPage
-    ? isScrolled
-      ? 'backdrop-blur-md shadow-lg'
-      : 'bg-transparent'
+    ? isScrolled ? 'backdrop-blur-md shadow-lg' : 'bg-transparent'
     : 'backdrop-blur-md';
 
   const navBgStyle = isProjectPage
@@ -35,12 +47,12 @@ const Navbar = () => {
     : { background: 'rgba(15,23,42,0.92)' };
 
   const navLinks = [
-    { label: 'Inicio', id: 'home' },
-    { label: 'Sobre Mí', id: 'about' },
+    { label: 'Inicio',      id: 'home' },
+    { label: 'Sobre Mí',    id: 'about' },
     { label: 'Experiencia', id: 'experience' },
-    { label: 'Proyectos', id: 'projects' },
+    { label: 'Proyectos',   id: 'projects' },
     { label: 'Habilidades', id: 'skills' },
-    { label: 'Contacto', id: 'contact' },
+    { label: 'Contacto',    id: 'contact' },
   ];
 
   return (
@@ -61,25 +73,34 @@ const Navbar = () => {
             to="/"
             className="text-xl font-bold text-slate-100 hover:text-blue-400 transition-colors tracking-tight"
           >
-            Ricardo García
+            Ricardo Pocasangre
           </Link>
 
           {/* Desktop links */}
           <ul className="hidden md:flex items-center space-x-7">
-            {navLinks.map(({ label, id }) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  onClick={(e) => handleNavClick(e, id)}
-                  className="text-sm font-medium text-slate-400 hover:text-slate-100 transition-colors relative
-                    after:content-[''] after:absolute after:bottom-[-4px] after:left-0
-                    after:w-0 after:h-0.5 after:bg-blue-400 after:transition-all after:duration-300
-                    hover:after:w-full"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map(({ label, id }) => {
+              const isActive = activeSection === id && !isProjectPage;
+              return (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    onClick={(e) => handleNavClick(e, id)}
+                    className="text-sm font-medium transition-colors relative pb-1"
+                    style={{ color: isActive ? '#60a5fa' : '#94a3b8' }}
+                  >
+                    {label}
+                    {/* Línea activa */}
+                    <span
+                      className="absolute bottom-0 left-0 h-0.5 rounded-full transition-all duration-300"
+                      style={{
+                        width: isActive ? '100%' : '0%',
+                        background: '#3b82f6',
+                      }}
+                    />
+                  </a>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Mobile toggle */}
@@ -117,7 +138,8 @@ const Navbar = () => {
                 <a
                   href={`#${id}`}
                   onClick={(e) => handleNavClick(e, id)}
-                  className="text-2xl font-medium text-slate-300 hover:text-white transition-colors"
+                  className="text-2xl font-medium transition-colors"
+                  style={{ color: activeSection === id ? '#60a5fa' : '#94a3b8' }}
                 >
                   {label}
                 </a>

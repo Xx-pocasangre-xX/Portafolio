@@ -5,23 +5,20 @@ const ExperienceSection = () => {
   const [visibleItems, setVisibleItems] = useState([]);
   const itemRefs = useRef([]);
 
-  // ── Orden CRONOLÓGICO: más antigua primero, más reciente al final ──────────
-  // Para agregar una nueva experiencia en el futuro, simplemente añádela
-  // al final del array — la lógica de timeline es automática.
   const experiences = [
     {
-      company: 'Ministerio de Obras Públicas (MOPT)',
+      company: 'Ministerio de Obras Públicas y Transporte (MOPT)',
       role: 'Software Development Intern',
-      period: 'Nov 2024 - Ene 2025',
+      period: 'Nov 2024 – Ene 2025',
       duration: '3 meses',
       current: false,
-      description: 'Diseño y desarrollo de sistemas internos gubernamentales de alta criticidad.',
+      description: 'Diseño y desarrollo de sistemas administrativos internos en un entorno gubernamental de alta criticidad.',
       tasks: [
-        'Desarrollo backend con C# y ASP.NET para procesos administrativos.',
-        'Prototipado UI/UX en Figma enfocado en la eficiencia del usuario.',
-        'Ejecución de QA Testing y documentación técnica institucional.',
+        'Desarrollo backend con C# y ASP.NET para automatización de procesos administrativos.',
+        'Prototipado UI/UX en Figma orientado a la eficiencia operativa del usuario.',
+        'Ejecución de QA Testing y elaboración de documentación técnica institucional.',
       ],
-      tags: ['ASP.NET', 'SQL Server 2022', 'Figma', 'QA Testing'],
+      tags: ['C#', 'ASP.NET', 'SQL Server 2022', 'Figma', 'QA Testing'],
       accent: {
         dot: '#facc15',
         ring: 'rgba(250,204,21,0.25)',
@@ -33,18 +30,20 @@ const ExperienceSection = () => {
       },
     },
     {
-      company: 'Famolcas S.A. de C.V (Lido)',
-      role: 'Mobile Developer & ERP Specialist',
-      period: 'Marzo 2025 - Presente',
-      duration: '~2 meses',
+      company: 'Famolcas S.A. de C.V. (Lido)',
+      role: 'Mobile Developer',
+      period: 'Marzo 2026 – Presente',
+      duration: '~3 meses',
       current: true,
-      description: 'Lidero el desarrollo de soluciones móviles nativas e integración de sistema de gestión empresarial.',
+      description: 'Desarrollo de aplicaciones móviles nativas Android y colaboración en módulos del sistema de gestión empresarial.',
       tasks: [
-        'Desarrollo de apps móviles en Kotlin bajo arquitectura MVVM.',
-        'Arquitectura e integración de módulos ERP utilizando C# y XAF Framework.',
-        'Consumo y optimización de servicios Web API REST.',
+        'Desarrollo de apps Android en Kotlin con arquitectura MVVM, Coroutines y OkHttp.',
+        'Colaboración en el desarrollo de módulos de un sistema ERP y POS con C# y XAF.',
+        'Desarrollo de ERPAPI con .NET Minimal APIs y Dapper sobre PostgreSQL.',
+        'Diseño y extensión del modelo de datos con XPO para nuevas entidades de negocio.',
+        'Sincronización entre apps móviles y backend mediante APIs REST.',
       ],
-      tags: ['Kotlin', 'C#', 'XAF', 'SQL Server', 'Android SDK'],
+      tags: ['Kotlin', 'Android SDK', 'MVVM', 'C#', '.NET', 'XAF', 'PostgreSQL', 'WPF'],
       accent: {
         dot: '#3b82f6',
         ring: 'rgba(59,130,246,0.25)',
@@ -74,20 +73,21 @@ const ExperienceSection = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-24 overflow-hidden" style={{ background: '#111827' }}>
+    <section id="experience" className="py-24 overflow-hidden" style={{ background: '#0f172a' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
-        <h2 className="text-4xl font-extrabold text-center mb-3 text-slate-100 tracking-tight">
-          Trayectoria Profesional
-        </h2>
-        <p className="text-slate-400 text-center mb-16 max-w-xl mx-auto">
-          Experiencia construyendo software real en entornos empresariales y gubernamentales
-        </p>
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-100 mb-3">Experiencia Profesional</h2>
+          <div className="w-16 h-1 bg-blue-500 mx-auto rounded-full mb-4" />
+          <p className="text-slate-400 max-w-xl mx-auto">
+            Trayectoria en entornos empresariales y gubernamentales
+          </p>
+        </div>
 
-        {/* ── Timeline — columna única ancha, orden cronológico ── */}
+        {/* ── Timeline vertical ── */}
         <div className="relative max-w-4xl mx-auto">
 
-          {/* Línea vertical — conecta todos los puntos */}
+          {/* Línea vertical */}
           <div
             className="absolute top-6 bottom-6"
             style={{
@@ -154,11 +154,9 @@ const ExperienceSection = () => {
                         >
                           <Calendar size={11} /> {exp.period}
                         </span>
-                        {/* Duración */}
                         <span className="text-xs px-2 py-0.5 rounded-md" style={{ color: '#64748b' }}>
                           {exp.duration}
                         </span>
-                        {/* Badge activo */}
                         {exp.current && (
                           <span
                             className="flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full"
@@ -179,8 +177,8 @@ const ExperienceSection = () => {
                       {exp.description}
                     </p>
 
-                    {/* Tareas en grid */}
-                    <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2.5 mb-6">
+                    {/* Tareas */}
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 mb-6">
                       {exp.tasks.map((task, i) => (
                         <li key={i} className="flex items-start gap-2.5 text-sm text-slate-300">
                           <CheckCircle2 size={14} className="flex-shrink-0 mt-0.5" style={{ color: a.dot }} />

@@ -31,11 +31,20 @@ function App() {
       <PageTransition>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/proyecto/mopt" element={<ProjectDetailsPage projectId="mopt" />} />
-          <Route path="/proyecto/marquesa" element={<ProjectDetailsPage projectId="marquesa" />} />
-          <Route path="/proyecto/homeclick" element={<ProjectDetailsPage projectId="homeclick" />} />
-          <Route path="/proyecto/isssSalud" element={<ProjectDetailsPage projectId="isssSalud" />} />
+
+          {/* Proyectos académicos */}
+          <Route path="/proyecto/mopt"          element={<ProjectDetailsPage projectId="mopt" />} />
+          <Route path="/proyecto/marquesa"      element={<ProjectDetailsPage projectId="marquesa" />} />
+          <Route path="/proyecto/homeclick"     element={<ProjectDetailsPage projectId="homeclick" />} />
+          <Route path="/proyecto/isssSalud"     element={<ProjectDetailsPage projectId="isssSalud" />} />
           <Route path="/proyecto/hospitalBloom" element={<ProjectDetailsPage projectId="hospitalBloom" />} />
+
+          {/* Proyectos profesionales Famolcas */}
+          <Route path="/proyecto/erp"           element={<ProjectDetailsPage projectId="erp" />} />
+          <Route path="/proyecto/appPunteo"     element={<ProjectDetailsPage projectId="appPunteo" />} />
+          <Route path="/proyecto/appVentas"     element={<ProjectDetailsPage projectId="appVentas" />} />
+          <Route path="/proyecto/erpapi"        element={<ProjectDetailsPage projectId="erpapi" />} />
+
           <Route path="*" element={<HomePage />} />
         </Routes>
       </PageTransition>
